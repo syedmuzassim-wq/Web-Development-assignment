@@ -1,0 +1,663 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Explore the best restaurants and shopping malls in Gorakhpur, Uttar Pradesh.">
+
+  <title>Explore Gorakhpur – Restaurants & Malls</title>
+
+  <style>
+    :root {
+      --green: #245b45;
+      --gold: #e5a832;
+      --cream: #faf7f0;
+      --dark: #26352e;
+      --white: #ffffff;
+      --radius: 16px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: var(--cream);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .wrap {
+      width: min(1150px, 92%);
+      margin-inline: auto;
+    }
+
+    /* HEADER */
+    .site-header {
+      background: white;
+      padding: 18px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 3px 15px rgba(0, 0, 0, 0.07);
+    }
+
+    .site-header .wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--green);
+    }
+
+    .site-nav ul {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+    }
+
+    .site-nav a {
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .site-nav a:hover {
+      color: var(--gold);
+    }
+
+    /* HERO */
+    .hero {
+      background:
+        linear-gradient(rgba(12, 40, 29, 0.7), rgba(12, 40, 29, 0.7)),
+        url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1600") center/cover;
+
+      color: white;
+      text-align: center;
+      padding: 110px 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      margin-bottom: 15px;
+    }
+
+    .hero h1 span {
+      color: #ffd36c;
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin: 0 auto 25px;
+      font-size: 1.1rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 25px;
+      background: var(--gold);
+      color: #26352e;
+      border-radius: 30px;
+      font-weight: 700;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: white;
+      transform: translateY(-3px);
+    }
+
+    /* SECTION */
+    .section {
+      padding-block: 75px;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      color: var(--green);
+      margin-bottom: 8px;
+    }
+
+    .section-heading p {
+      color: #777;
+    }
+
+    /* CARDS GRID */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.13);
+    }
+
+    .card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      transition: 0.4s;
+    }
+
+    .card:hover img {
+      transform: scale(1.05);
+    }
+
+    .card-body {
+      padding: 22px;
+    }
+
+    .card h3 {
+      color: var(--green);
+      font-size: 1.3rem;
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      color: #666;
+      font-size: 0.95rem;
+      margin-bottom: 12px;
+    }
+
+    .location {
+      display: block;
+      color: #8b6b32;
+      font-size: 0.88rem;
+      margin-bottom: 15px;
+    }
+
+    .card .btn {
+      font-size: 0.9rem;
+      padding: 9px 18px;
+    }
+
+    /* MALL SECTION */
+    .malls {
+      background: #edf3ed;
+    }
+
+    /* ABOUT GORAKHPUR */
+    .about {
+      padding-block: 70px;
+      text-align: center;
+    }
+
+    .about h2 {
+      color: var(--green);
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+
+    .about p {
+      max-width: 750px;
+      margin: auto;
+      color: #666;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #183c2d;
+      color: white;
+      padding: 25px 0;
+    }
+
+    footer .wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    footer a:hover {
+      color: var(--gold);
+    }
+
+    /* TABLET */
+    @media (max-width: 850px) {
+      .cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero {
+        padding: 85px 20px;
+      }
+    }
+
+    /* MOBILE */
+    @media (max-width: 550px) {
+      .site-header .wrap {
+        flex-direction: column;
+      }
+
+      .site-nav ul {
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 70px 15px;
+      }
+
+      .section {
+        padding-block: 50px;
+      }
+
+      footer .wrap {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header class="site-header">
+
+```
+<div class="wrap">
+
+  <a href="#" class="logo">🌆 Explore Gorakhpur</a>
+
+  <nav class="site-nav">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#restaurants">Restaurants</a></li>
+      <li><a href="#malls">Shopping Malls</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+  </nav>
+
+</div>
+```
+
+  </header>
+
+  <main>
+
+```
+<!-- HERO SECTION -->
+<section class="hero" id="home">
+
+  <h1>Welcome to <span>Gorakhpur</span></h1>
+
+  <p>
+    Discover amazing restaurants, delicious food,
+    beautiful shopping malls and exciting places
+    in Gorakhpur, Uttar Pradesh.
+  </p>
+
+  <a href="#restaurants" class="btn">Explore Places ↓</a>
+
+</section>
+
+<!-- RESTAURANTS -->
+<section class="section" id="restaurants">
+
+  <div class="wrap">
+
+    <div class="section-heading">
+      <h2>🍽️ Best Restaurants in Gorakhpur</h2>
+      <p>Explore popular dining places and enjoy delicious food.</p>
+    </div>
+
+    <div class="cards">
+
+      <!-- RESTAURANT 1 -->
+      <article class="card">
+
+        <img
+          src="https://images.unsplash.com/photo-1544025162-d76694265947?w=800"
+          alt="Traditional Indian food">
+
+        <div class="card-body">
+
+          <h3>Baati Chokha Restaurant</h3>
+
+          <p>
+            Enjoy traditional North Indian food,
+            delicious baati, chokha and thali.
+          </p>
+
+          <span class="location">
+            📍 Taramandal, Deoria Bypass Road
+          </span>
+
+          <a class="btn"
+            href="https://www.google.com/maps/search/?api=1&query=Baati+Chokha+Restaurant+Gorakhpur"
+            target="_blank" rel="noopener">
+            View Location →
+          </a>
+
+        </div>
+
+      </article>
+
+      <!-- RESTAURANT 2 -->
+      <article class="card">
+
+        <img
+          src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800"
+          alt="Beautiful restaurant interior">
+
+        <div class="card-body">
+
+          <h3>Kohinoor Restaurant</h3>
+
+          <p>
+            A popular dining place offering
+            North Indian and Chinese cuisine.
+          </p>
+
+          <span class="location">
+            📍 Park Road, Civil Lines
+          </span>
+
+          <a class="btn"
+            href="https://www.google.com/maps/search/?api=1&query=Kohinoor+Restaurant+Gorakhpur"
+            target="_blank" rel="noopener">
+            View Location →
+          </a>
+
+        </div>
+
+      </article>
+
+      <!-- RESTAURANT 3 -->
+      <article class="card">
+
+        <img
+          src="https://images.unsplash.com/photo-1515003197210-e0cd7184f8b5?w=800"
+          alt="Restaurant food served on a table">
+
+        <div class="card-body">
+
+          <h3>Zunoon Restaurant</h3>
+
+          <p>
+            Enjoy family dining with North Indian,
+            Mughlai and multi-cuisine options.
+          </p>
+
+          <span class="location">
+            📍 Medical College Road, Basharatpur
+          </span>
+
+          <a class="btn"
+            href="https://www.google.com/maps/search/?api=1&query=Zunoon+Restaurant+Gorakhpur"
+            target="_blank" rel="noopener">
+            View Location →
+          </a>
+
+        </div>
+
+      </article>
+
+      <!-- RESTAURANT 4 -->
+      <article class="card">
+
+        <img
+          src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800"
+          alt="Fine dining restaurant">
+
+        <div class="card-body">
+
+          <h3>Seasons Restaurant</h3>
+
+          <p>
+            Enjoy family dining, rooftop atmosphere
+            and delicious North Indian food.
+          </p>
+
+          <span class="location">
+            📍 Medical College Road, Basharatpur
+          </span>
+
+          <a class="btn"
+            href="https://www.google.com/maps/search/?api=1&query=Seasons+Restaurant+Gorakhpur"
+            target="_blank" rel="noopener">
+            View Location →
+          </a>
+
+        </div>
+
+      </article>
+
+      <!-- RESTAURANT 5 -->
+      <article class="card">
+
+        <img
+          src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800"
+          alt="Cozy restaurant and bakery">
+
+        <div class="card-body">
+
+          <h3>Bobi's Restaurant & Bakery</h3>
+
+          <p>
+            A well-known restaurant and bakery
+            for snacks, meals, cakes and desserts.
+          </p>
+
+          <span class="location">
+            📍 Golghar, Gorakhpur
+          </span>
+
+          <a class="btn"
+            href="https://www.google.com/maps/search/?api=1&query=Bobis+Restaurant+Bakery+Gorakhpur"
+            target="_blank" rel="noopener">
+            View Location →
+          </a>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- SHOPPING MALLS -->
+<section class="section malls" id="malls">
+
+  <div class="wrap">
+
+    <div class="section-heading">
+      <h2>🛍️ Popular Shopping Malls</h2>
+      <p>Shopping, movies, food and entertainment in Gorakhpur.</p>
+    </div>
+
+    <div class="cards">
+
+      <!-- MALL 1 -->
+      <article class="card">
+
+        <img
+          src="https://images.unsplash.com/photo-1519567241046-7f570eee3ce6?w=800"
+          alt="Modern shopping mall">
+
+        <div class="card-body">
+
+          <h3>Orion Mall</h3>
+
+          <p>
+            A major shopping and entertainment destination
+            with brands, food court, cinema and gaming zone.
+          </p>
+
+          <span class="location">
+            📍 Mohaddipur, near Radisson Blu
+          </span>
+
+          <a class="btn"
+            href="https://www.google.com/maps/search/?api=1&query=Orion+Mall+Gorakhpur"
+            target="_blank" rel="noopener">
+            View Location →
+          </a>
+
+        </div>
+
+      </article>
+
+      <!-- MALL 2 -->
+      <article class="card">
+
+        <img
+          src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800"
+          alt="Fashion and shopping store">
+
+        <div class="card-body">
+
+          <h3>City Mall</h3>
+
+          <p>
+            A popular shopping destination featuring
+            fashion stores, food outlets and cinema.
+          </p>
+
+          <span class="location">
+            📍 Park Road, Civil Lines, Golghar
+          </span>
+
+          <a class="btn"
+            href="https://www.google.com/maps/search/?api=1&query=City+Mall+Gorakhpur"
+            target="_blank" rel="noopener">
+            View Location →
+          </a>
+
+        </div>
+
+      </article>
+
+      <!-- MALL 3 -->
+      <article class="card">
+
+        <img
+          src="https://images.unsplash.com/photo-1481437156560-3205f6a55735?w=800"
+          alt="Shopping mall fashion outlets">
+
+        <div class="card-body">
+
+          <h3>AD Mall</h3>
+
+          <p>
+            Explore shopping, fashion, food outlets
+            and entertainment in one place.
+          </p>
+
+          <span class="location">
+            📍 Near Vijay Chowk, Cinema Road
+          </span>
+
+          <a class="btn"
+            href="https://www.google.com/maps/search/?api=1&query=AD+Mall+Gorakhpur"
+            target="_blank" rel="noopener">
+            View Location →
+          </a>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ABOUT GORAKHPUR -->
+<section class="about" id="about">
+
+  <div class="wrap">
+
+    <h2>About Gorakhpur ❤️</h2>
+
+    <p>
+      Gorakhpur is a beautiful city in Uttar Pradesh.
+      It is known for its culture, famous temples,
+      shopping destinations, restaurants and delicious food.
+      Whether you love shopping or dining with family,
+      Gorakhpur has many places to explore.
+    </p>
+
+  </div>
+
+</section>
+```
+
+  </main>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+```
+<div class="wrap">
+
+  <span>© 2026 Explore Gorakhpur. All Rights Reserved.</span>
+
+  <span>
+    <a href="#home">Home</a> ·
+    <a href="#restaurants">Restaurants</a> ·
+    <a href="#malls">Malls</a>
+  </span>
+
+</div>
+```
+
+  </footer>
+
+</body>
+
+</html>

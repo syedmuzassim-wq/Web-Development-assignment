@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Responsive navbar and hero section using Flexbox.">
+  <title>CloudNine | Navbar + Hero</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      color: #1b263b;
+      background: #f4f8ff;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 7%;
+      background: white;
+      box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+      position: relative;
+      z-index: 10;
+    }
+
+    .logo {
+      font-size: 27px;
+      font-weight: bold;
+      color: #0077b6;
+      text-decoration: none;
+    }
+
+    .links {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      list-style: none;
+    }
+
+    .links a {
+      text-decoration: none;
+      color: #334155;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .links a:hover {
+      color: #0077b6;
+    }
+
+    .links .cta {
+      background: #0077b6;
+      color: white;
+      padding: 11px 22px;
+      border-radius: 8px;
+    }
+
+    .links .cta:hover {
+      background: #023e8a;
+      color: white;
+    }
+
+    #toggle {
+      display: none;
+    }
+
+    .burger {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+      color: #0077b6;
+    }
+
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 50px;
+      max-width: 1200px;
+      margin: auto;
+      padding: 80px 30px;
+      min-height: 85vh;
+    }
+
+    .hero__text {
+      flex: 1;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #dff3ff;
+      color: #0077b6;
+      padding: 9px 16px;
+      border-radius: 30px;
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 22px;
+    }
+
+    .hero__text h1 {
+      font-size: clamp(35px, 5vw, 58px);
+      line-height: 1.15;
+      margin-bottom: 22px;
+      color: #102a43;
+    }
+
+    .hero__text p {
+      font-size: 17px;
+      line-height: 1.8;
+      color: #526477;
+      max-width: 480px;
+      margin-bottom: 30px;
+    }
+
+    .hero__btns {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 25px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn--primary {
+      background: #0077b6;
+      color: white;
+      box-shadow: 0 5px 15px rgba(0, 119, 182, 0.2);
+    }
+
+    .btn--primary:hover {
+      background: #023e8a;
+      transform: translateY(-3px);
+    }
+
+    .btn--ghost {
+      border: 2px solid #0077b6;
+      color: #0077b6;
+    }
+
+    .btn--ghost:hover {
+      background: #0077b6;
+      color: white;
+      transform: translateY(-3px);
+    }
+
+    .hero__img {
+      flex: 1;
+    }
+
+    .hero__img img {
+      display: block;
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+      transition: 0.4s;
+    }
+
+    .hero__img img:hover {
+      transform: scale(1.03);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #102a43;
+      color: white;
+    }
+    
+    @media (max-width: 768px) {
+
+      .navbar {
+        padding: 16px 5%;
+      }
+
+      .burger {
+        display: block;
+      }
+
+      .links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        gap: 22px;
+        padding: 25px;
+        background: white;
+        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.08);
+      }
+
+      #toggle:checked ~ .links {
+        display: flex;
+      }
+
+      .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 45px 20px;
+        gap: 35px;
+      }
+
+      .hero__text p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero__btns {
+        justify-content: center;
+      }
+
+      .hero__img {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .hero__text h1 {
+        font-size: 32px;
+      }
+
+      .btn {
+        padding: 12px 18px;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+
+  <nav class="navbar">
+
+```
+<a href="#" class="logo">☁ CloudNine</a>
+
+<input type="checkbox" id="toggle">
+
+<label for="toggle" class="burger" aria-label="Toggle navigation menu">
+  ☰
+</label>
+
+<ul class="links">
+  <li><a href="#features">Features</a></li>
+  <li><a href="#pricing">Pricing</a></li>
+  <li><a href="#about">About</a></li>
+  <li><a href="#start" class="cta">Get Started</a></li>
+</ul>
+```
+
+  </nav>
+
+
+  <header class="hero">
+
+```
+<div class="hero__text">
+
+  <span class="tag">☁ Smart Cloud Solutions</span>
+
+  <h1>Build Faster With The Cloud You Can Trust.</h1>
+
+  <p>
+    Deploy, scale and monitor your apps in minutes.
+    Enjoy powerful cloud technology without worrying
+    about managing servers.
+  </p>
+
+  <div class="hero__btns">
+    <a href="#start" class="btn btn--primary">Start Free</a>
+    <a href="#about" class="btn btn--ghost">Watch Demo</a>
+  </div>
+
+</div>
+
+<div class="hero__img">
+  <img
+    src="C:\Users\Galaxy Book 4\Downloads\Cozy Samsung Galaxy Book Workspace.png"
+    alt="CloudNine workspace image">
+</div>
+```
+
+  </header>
+
+
+  <footer>
+    <p>© 2026 CloudNine. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>

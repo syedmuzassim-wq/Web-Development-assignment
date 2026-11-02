@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Job application form using every HTML input type">
+
+  <title>Job Application</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      padding: 30px 15px;
+      color: #333;
+    }
+
+    .container {
+      max-width: 850px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+      text-align: center;
+      color: #4f46e5;
+      margin-bottom: 30px;
+    }
+
+    fieldset {
+      border: 1px solid #d1d5db;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 25px;
+    }
+
+    legend {
+      font-size: 19px;
+      font-weight: bold;
+      color: #4f46e5;
+      padding: 0 10px;
+    }
+
+    form p {
+      margin-bottom: 18px;
+    }
+
+    label {
+      font-weight: 600;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    input:not([type="radio"]):not([type="checkbox"]):not([type="range"]):not([type="color"]):not([type="file"]):not([type="submit"]):not([type="reset"]):not([type="button"]),
+    select,
+    textarea {
+      width: 100%;
+      padding: 11px;
+      margin-top: 7px;
+      border: 1px solid #ccc;
+      border-radius: 7px;
+      font-size: 15px;
+      outline: none;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: #667eea;
+      box-shadow: 0 0 5px rgba(102, 126, 234, 0.4);
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+      margin-right: 6px;
+    }
+
+    input[type="range"] {
+      width: 75%;
+      cursor: pointer;
+      margin-top: 12px;
+    }
+
+    input[type="color"] {
+      width: 55px;
+      height: 35px;
+      cursor: pointer;
+      vertical-align: middle;
+    }
+
+    input[type="file"] {
+      display: block;
+      margin-top: 10px;
+    }
+
+    output {
+      color: #4f46e5;
+      font-weight: bold;
+    }
+
+    fieldset label:has(input[type="radio"]),
+    fieldset label:has(input[type="checkbox"]),
+    p label:has(input[type="checkbox"]) {
+      display: inline-block;
+      margin-right: 18px;
+      margin-bottom: 10px;
+      font-weight: normal;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 25px;
+    }
+
+    .buttons input {
+      padding: 12px 25px;
+      border: none;
+      border-radius: 7px;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    input[type="submit"] {
+      background: #4f46e5;
+      color: white;
+    }
+
+    input[type="reset"] {
+      background: #e5e7eb;
+      color: #333;
+    }
+
+    input[type="button"] {
+      background: #16a34a;
+      color: white;
+    }
+
+    .buttons input:hover {
+      opacity: 0.85;
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
+      fieldset {
+        padding: 15px;
+      }
+    }
+
+    @media print {
+      body {
+        background: white;
+        padding: 0;
+      }
+
+      .container {
+        box-shadow: none;
+      }
+
+      .buttons {
+        display: none;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div class="container">
+
+```
+<h1>Job Application – Front-End Developer</h1>
+
+<form action="#" method="post" enctype="multipart/form-data">
+
+  <fieldset>
+    <legend>Personal Details</legend>
+
+    <p>
+      <label for="fn">Full Name</label>
+      <input type="text" id="fn" name="fullname" required>
+    </p>
+
+    <p>
+      <label for="em">Email</label>
+      <input type="email" id="em" name="email" required>
+    </p>
+
+    <p>
+      <label for="ph">Phone</label>
+      <input type="tel" id="ph" name="phone">
+    </p>
+
+    <p>
+      <label for="dob">Date of Birth</label>
+      <input type="date" id="dob" name="dob">
+    </p>
+
+    <p>
+      <label for="web">Portfolio URL</label>
+      <input type="url" id="web" name="website" placeholder="https://">
+    </p>
+
+    <p>
+      <label for="pw">Create Password</label>
+      <input type="password" id="pw" name="password" minlength="8">
+    </p>
+  </fieldset>
+
+  <fieldset>
+    <legend>Job Details</legend>
+
+    <p>
+      <label for="pos">Position</label>
+      <select id="pos" name="position">
+        <option>Front-End Developer</option>
+        <option>UI Designer</option>
+        <option>QA Tester</option>
+      </select>
+    </p>
+
+    <p>
+      <label for="join">Earliest Joining Date</label>
+      <input type="date" id="join" name="join">
+    </p>
+
+    <p>
+      <label for="slot">Interview Slot</label>
+      <input type="datetime-local" id="slot" name="slot">
+    </p>
+
+    <p>
+      <label for="mo">Preferred Start Month</label>
+      <input type="month" id="mo" name="month">
+    </p>
+
+    <p>
+      <label for="wk">Preferred Week</label>
+      <input type="week" id="wk" name="week">
+    </p>
+
+    <p>
+      <label for="tm">Best Call Time</label>
+      <input type="time" id="tm" name="time">
+    </p>
+
+    <p>
+      <label for="exp">Years of Experience</label>
+      <input type="number" id="exp" name="exp" min="0" max="40" value="0">
+    </p>
+
+    <p>
+      <label for="sal">Expected Salary (₹ LPA)</label>
+      <input type="range" id="sal" name="salary" min="2" max="30" value="6"
+        oninput="out.value=this.value">
+      <output id="out">6</output>
+    </p>
+
+    <p>
+      <label for="col">Favourite Colour</label>
+      <input type="color" id="col" name="colour" value="#3366ff">
+    </p>
+
+    <p>
+      <label for="sk">Skills (Type or Pick)</label>
+      <input list="skills" id="sk" name="skill">
+
+      <datalist id="skills">
+        <option value="HTML">
+        <option value="CSS">
+        <option value="JavaScript">
+        <option value="Git">
+      </datalist>
+    </p>
+
+    <p>
+      <label for="s">Search Company Policy</label>
+      <input type="search" id="s" name="q">
+    </p>
+  </fieldset>
+
+  <fieldset>
+    <legend>Work Mode</legend>
+
+    <label>
+      <input type="radio" name="mode" value="onsite" checked>
+      On-site
+    </label>
+
+    <label>
+      <input type="radio" name="mode" value="remote">
+      Remote
+    </label>
+
+    <label>
+      <input type="radio" name="mode" value="hybrid">
+      Hybrid
+    </label>
+  </fieldset>
+
+  <fieldset>
+    <legend>Technologies Known</legend>
+
+    <label>
+      <input type="checkbox" name="tech" value="html">
+      HTML
+    </label>
+
+    <label>
+      <input type="checkbox" name="tech" value="css">
+      CSS
+    </label>
+
+    <label>
+      <input type="checkbox" name="tech" value="js">
+      JavaScript
+    </label>
+  </fieldset>
+
+  <p>
+    <label for="cv">Upload Résumé (PDF)</label>
+    <input type="file" id="cv" name="resume" accept=".pdf">
+  </p>
+
+  <p>
+    <label for="cover">Cover Letter</label>
+    <textarea id="cover" name="cover" rows="5" maxlength="500"></textarea>
+  </p>
+
+  <input type="hidden" name="source" value="careers-page">
+
+  <p>
+    <label>
+      <input type="checkbox" name="agree" required>
+      I confirm that the information is correct
+    </label>
+  </p>
+
+  <div class="buttons">
+    <input type="submit" value="Apply Now">
+    <input type="reset" value="Reset">
+    <input type="button" value="Print" onclick="window.print()">
+  </div>
+
+</form>
+```
+
+  </div>
+
+</body>
+</html>

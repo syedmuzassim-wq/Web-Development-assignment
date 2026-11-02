@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Responsive menu bar using display:flex.">
+  <title>Flexbox Menu Bar</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f1f5f9;
+      color: #1e293b;
+    }
+
+    /* NAVIGATION BAR */
+
+    .menu {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: linear-gradient(120deg, #14213d, #1d3557);
+      padding: 0 5%;
+      flex-wrap: wrap;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    /* BRAND LOGO */
+
+    .menu__brand {
+      color: #fff;
+      font-weight: 800;
+      font-size: 1.6rem;
+      padding: 1.2rem 0;
+      letter-spacing: 1px;
+    }
+
+    .menu__brand span {
+      color: #ffb703;
+    }
+
+    /* MENU LINKS */
+
+    .menu__list {
+      display: flex;
+      list-style: none;
+    }
+
+    .menu__list a {
+      display: block;
+      color: #fff;
+      text-decoration: none;
+      padding: 1.4rem 1.2rem;
+      font-weight: 600;
+      transition: 0.3s;
+      position: relative;
+    }
+
+    .menu__list a:hover,
+    .menu__list a.active {
+      color: #ffb703;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .menu__list a::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 3px;
+      background: #ffb703;
+      bottom: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      transition: width 0.3s;
+    }
+
+    .menu__list a:hover::after,
+    .menu__list a.active::after {
+      width: 55%;
+    }
+
+    /* SIGNUP BUTTON */
+
+    .menu__cta {
+      background: #e63946;
+      color: #fff;
+      padding: 11px 22px;
+      border-radius: 7px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: 0.3s;
+    }
+
+    .menu__cta:hover {
+      background: #c1121f;
+      transform: translateY(-3px);
+    }
+
+    /* MAIN CONTENT */
+
+    main {
+      min-height: 75vh;
+      padding: 80px 20px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    main h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      color: #1d3557;
+      margin-bottom: 15px;
+    }
+
+    main p {
+      color: #64748b;
+      font-size: 18px;
+      max-width: 600px;
+      line-height: 1.7;
+    }
+
+    .hero-btn {
+      display: inline-block;
+      margin-top: 25px;
+      background: #1d3557;
+      color: white;
+      text-decoration: none;
+      padding: 13px 28px;
+      border-radius: 30px;
+      transition: 0.3s;
+    }
+
+    .hero-btn:hover {
+      background: #457b9d;
+      transform: scale(1.05);
+    }
+
+    /* FEATURE CARDS */
+
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+      padding: 30px 20px 70px;
+    }
+
+    .feature-card {
+      background: white;
+      width: 260px;
+      padding: 30px 20px;
+      text-align: center;
+      border-radius: 12px;
+      box-shadow: 0 5px 18px rgba(0, 0, 0, 0.07);
+      transition: 0.3s;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-7px);
+    }
+
+    .feature-card h2 {
+      color: #1d3557;
+      margin-bottom: 10px;
+    }
+
+    .feature-card p {
+      color: #64748b;
+      line-height: 1.6;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #14213d;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    /* RESPONSIVE DESIGN */
+
+    @media (max-width: 640px) {
+      .menu {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0 15px 15px;
+      }
+
+      .menu__brand {
+        text-align: center;
+      }
+
+      .menu__list {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .menu__list a {
+        padding: 12px;
+      }
+
+      .menu__list a::after {
+        bottom: 5px;
+      }
+
+      .menu__cta {
+        margin-top: 12px;
+        text-align: center;
+      }
+
+      main {
+        padding: 60px 20px;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- NAVIGATION BAR -->
+
+  <nav class="menu" aria-label="Main Navigation">
+
+```
+<div class="menu__brand">
+  My<span>Brand.</span>
+</div>
+
+<ul class="menu__list">
+  <li><a class="active" href="#">Home</a></li>
+  <li><a href="#services">Services</a></li>
+  <li><a href="#portfolio">Portfolio</a></li>
+  <li><a href="#contact">Contact</a></li>
+</ul>
+
+<a class="menu__cta" href="#contact">Sign Up →</a>
+```
+
+  </nav>
+
+  <!-- MAIN SECTION -->
+
+  <main>
+
+```
+<h1>Welcome to My Website</h1>
+
+<p>
+  Explore our website and discover amazing services.
+  This responsive navigation bar is created using CSS Flexbox.
+  Resize your browser window to see the mobile layout.
+</p>
+
+<a class="hero-btn" href="#services">Explore More</a>
+```
+
+  </main>
+
+  <!-- SERVICES SECTION -->
+
+  <section class="features" id="services">
+
+```
+<div class="feature-card">
+  <h2>💻 Web Design</h2>
+  <p>Modern and creative website designs for everyone.</p>
+</div>
+
+<div class="feature-card" id="portfolio">
+  <h2>🚀 Development</h2>
+  <p>Responsive and user-friendly website development.</p>
+</div>
+
+<div class="feature-card">
+  <h2>🎨 Creativity</h2>
+  <p>Beautiful layouts with attractive colors and animations.</p>
+</div>
+```
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer id="contact">
+    <p>© 2026 MyBrand. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>

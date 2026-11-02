@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Landing-page hero section built with position and z-index.">
+  <title>TravelNest – Explore the World</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f8fafc;
+      color: #1e293b;
+    }
+
+    /* HERO SECTION */
+
+    .hero {
+      position: relative;
+      height: 100vh;
+      min-height: 550px;
+      overflow: hidden;
+      color: white;
+    }
+
+    .hero__bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.75),
+        rgba(0, 0, 0, 0.25)
+      );
+      z-index: 1;
+    }
+
+    /* NAVIGATION */
+
+    .nav {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 3;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 25px 7%;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+    }
+
+    .nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #ffb703;
+    }
+
+    /* HERO CONTENT */
+
+    .hero__content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      z-index: 2;
+      width: min(90%, 750px);
+    }
+
+    .tagline {
+      color: #ffb703;
+      font-size: 14px;
+      font-weight: bold;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    .hero__content h1 {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .hero__content p {
+      font-size: 19px;
+      color: #f1f5f9;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #ff6b35;
+      color: white;
+      padding: 15px 35px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #e85d04;
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    /* RATING BADGE */
+
+    .badge {
+      position: absolute;
+      right: 7%;
+      bottom: 40px;
+      z-index: 3;
+      background: white;
+      color: #222;
+      padding: 15px 22px;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+    }
+
+    .badge strong {
+      display: block;
+      font-size: 25px;
+      color: #f59e0b;
+    }
+
+    /* FIXED BUTTON */
+
+    .fab {
+      position: fixed;
+      right: 20px;
+      top: 50%;
+      z-index: 10;
+      background: #ff6b35;
+      color: white;
+      padding: 12px 17px;
+      border-radius: 50%;
+      text-decoration: none;
+      font-size: 22px;
+      font-weight: bold;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+      transition: 0.3s;
+    }
+
+    .fab:hover {
+      background: #1d3557;
+      transform: scale(1.1);
+    }
+
+    /* NEXT SECTION */
+
+    section.next {
+      padding: 75px 20px;
+      text-align: center;
+    }
+
+    .next h2 {
+      font-size: 32px;
+      color: #1d3557;
+      margin-bottom: 15px;
+    }
+
+    .next p {
+      color: #64748b;
+      font-size: 17px;
+    }
+
+    .destination-cards {
+      max-width: 1000px;
+      margin: 35px auto 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      width: 250px;
+      border-radius: 15px;
+      box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+    }
+
+    .card h3 {
+      color: #1d3557;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      text-align: center;
+      background: #1d3557;
+      color: white;
+      padding: 20px;
+    }
+
+    /* RESPONSIVE DESIGN */
+
+    @media (max-width: 650px) {
+      .nav {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px 10px;
+      }
+
+      .nav-links {
+        gap: 18px;
+      }
+
+      .nav-links a {
+        font-size: 14px;
+      }
+
+      .hero__content p {
+        font-size: 16px;
+      }
+
+      .badge {
+        right: 50%;
+        transform: translateX(50%);
+        bottom: 20px;
+        white-space: nowrap;
+      }
+
+      .fab {
+        right: 12px;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- HERO SECTION -->
+
+  <header class="hero">
+
+```
+<img class="hero__bg"
+  src="https://picsum.photos/id/1036/1600/900"
+  alt="Beautiful snowy mountain landscape">
+
+<!-- NAVIGATION -->
+
+<nav class="nav">
+  <span class="logo">✈ TravelNest</span>
+
+  <div class="nav-links">
+    <a href="#next">Destinations</a>
+    <a href="#deals">Deals</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO TEXT -->
+
+<div class="hero__content">
+  <div class="tagline">Discover the World</div>
+
+  <h1>Find Your Next Adventure</h1>
+
+  <p>
+    Handpicked trips to the world's most beautiful places.
+    Explore new destinations and create unforgettable memories.
+  </p>
+
+  <a class="btn" href="#next">Start Exploring →</a>
+</div>
+
+<!-- RATING BADGE -->
+
+<div class="badge">
+  <strong>⭐ 4.9/5</strong>
+  12,000+ Happy Travellers
+</div>
+```
+
+  </header>
+
+  <!-- FIXED BACK TO TOP BUTTON -->
+
+<a class="fab" href="#" aria-label="Back to top">↑</a>
+
+  <!-- DESTINATIONS SECTION -->
+
+  <section class="next" id="next">
+
+```
+<h2>Popular Destinations</h2>
+
+<p>Explore beautiful places and plan your next journey.</p>
+
+<div class="destination-cards">
+
+  <div class="card">
+    <h3>🏔️ Mountains</h3>
+    <p>Enjoy peaceful mountain views and fresh air.</p>
+  </div>
+
+  <div class="card">
+    <h3>🏖️ Beaches</h3>
+    <p>Relax near beautiful beaches and blue oceans.</p>
+  </div>
+
+  <div class="card">
+    <h3>🌳 Forests</h3>
+    <p>Discover nature and enjoy green landscapes.</p>
+  </div>
+
+</div>
+```
+
+  </section>
+
+  <section class="next" id="deals">
+    <h2>Special Travel Deals</h2>
+    <p>Explore exciting destinations and make your holidays memorable.</p>
+  </section>
+
+  <footer id="contact">
+    <p>© 2026 TravelNest | Explore More, Travel More</p>
+  </footer>
+
+</body>
+</html>

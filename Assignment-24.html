@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Design-token stylesheet using CSS custom properties.">
+
+  <title>Design Tokens with CSS Variables</title>
+
+  <style>
+
+    /* ===== DESIGN TOKENS ===== */
+
+    :root {
+      /* Colours */
+      --color-primary: #3d5af1;
+      --color-primary-dark: #2b3fb5;
+      --color-accent: #ff6b6b;
+      --color-bg: #f5f7ff;
+      --color-surface: #ffffff;
+      --color-text: #1f2430;
+      --color-muted: #6b7280;
+
+      /* Font Sizes */
+      --fs-sm: .8rem;
+      --fs-base: 1rem;
+      --fs-md: 1.25rem;
+      --fs-lg: 1.563rem;
+      --fs-xl: 1.953rem;
+      --fs-2xl: 2.441rem;
+
+      /* Spacing */
+      --space-1: .25rem;
+      --space-2: .5rem;
+      --space-3: 1rem;
+      --space-4: 1.5rem;
+      --space-5: 2.5rem;
+
+      /* Radius and Shadow */
+      --radius: 12px;
+      --shadow: 0 4px 14px rgba(31, 36, 48, .12);
+
+      /* Font */
+      --font-body: system-ui, -apple-system, 'Segoe UI', sans-serif;
+    }
+
+    /* ===== DARK THEME ===== */
+
+    [data-theme="dark"] {
+      --color-bg: #12141c;
+      --color-surface: #1e2230;
+      --color-text: #eef0f7;
+      --color-muted: #9aa3b5;
+      --shadow: 0 4px 14px rgba(0, 0, 0, .3);
+    }
+
+    /* ===== UNIVERSAL ===== */
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* ===== BASE ===== */
+
+    body {
+      padding: var(--space-5);
+      font-family: var(--font-body);
+      font-size: var(--fs-base);
+      line-height: 1.6;
+      background: var(--color-bg);
+      color: var(--color-text);
+      transition: background .3s, color .3s;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    /* ===== HEADER ===== */
+
+    header {
+      text-align: center;
+      margin-bottom: var(--space-5);
+    }
+
+    h1 {
+      font-size: var(--fs-2xl);
+      margin-bottom: var(--space-2);
+      color: var(--color-primary);
+    }
+
+    header p {
+      color: var(--color-muted);
+      font-size: var(--fs-md);
+    }
+
+    h2 {
+      font-size: var(--fs-lg);
+      margin-bottom: var(--space-3);
+      color: var(--color-primary);
+    }
+
+    small {
+      font-size: var(--fs-sm);
+      color: var(--color-muted);
+    }
+
+    /* ===== BUTTONS ===== */
+
+    .btn {
+      background: var(--color-primary);
+      color: #fff;
+      border: none;
+      padding: 11px 22px;
+      border-radius: var(--radius);
+      font-size: var(--fs-base);
+      cursor: pointer;
+      transition: .3s;
+    }
+
+    .btn:hover {
+      background: var(--color-primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn--accent {
+      background: var(--color-accent);
+    }
+
+    .btn--accent:hover {
+      background: #e84e5e;
+    }
+
+    .theme-button {
+      display: block;
+      margin: 20px auto;
+    }
+
+    /* ===== CARDS ===== */
+
+    .card {
+      background: var(--color-surface);
+      padding: var(--space-4);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      margin-block: var(--space-4);
+      transition: background .3s, transform .3s;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+    }
+
+    /* ===== COLOR SWATCHES ===== */
+
+    .swatches {
+      display: flex;
+      gap: var(--space-3);
+      flex-wrap: wrap;
+    }
+
+    .swatch {
+      width: 120px;
+      height: 85px;
+      border-radius: var(--radius);
+      display: grid;
+      place-items: center;
+      padding: var(--space-2);
+      font-size: var(--fs-sm);
+      color: #fff;
+      font-weight: bold;
+      transition: .3s;
+    }
+
+    .swatch:hover {
+      transform: scale(1.05);
+    }
+
+    /* ===== TYPE SCALE ===== */
+
+    .type-example {
+      padding: 8px 0;
+      border-bottom: 1px solid var(--color-muted);
+    }
+
+    .type-xl {
+      font-size: var(--fs-xl);
+    }
+
+    .type-lg {
+      font-size: var(--fs-lg);
+    }
+
+    .type-md {
+      font-size: var(--fs-md);
+    }
+
+    .type-base {
+      font-size: var(--fs-base);
+    }
+
+    .type-sm {
+      font-size: var(--fs-sm);
+    }
+
+    /* ===== BUTTON AREA ===== */
+
+    .button-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    /* ===== FOOTER ===== */
+
+    footer {
+      text-align: center;
+      margin-top: var(--space-5);
+      padding: var(--space-3);
+      color: var(--color-muted);
+    }
+
+    /* ===== RESPONSIVE DESIGN ===== */
+
+    @media (max-width: 600px) {
+
+      body {
+        padding: 18px;
+      }
+
+      h1 {
+        font-size: 30px;
+      }
+
+      h2 {
+        font-size: 22px;
+      }
+
+      .card {
+        padding: 18px;
+      }
+
+      .swatch {
+        width: 95px;
+        height: 70px;
+      }
+
+      .btn {
+        padding: 9px 15px;
+      }
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <div class="container">
+
+```
+<!-- Header -->
+<header>
+  <h1>Design Token Sheet</h1>
+  <p>CSS Custom Properties &amp; Variables</p>
+
+  <button class="btn theme-button" id="themeToggle">
+    🌙 Toggle Dark Theme
+  </button>
+</header>
+
+<!-- Colours Section -->
+<section class="card">
+
+  <h2>🎨 Colours</h2>
+
+  <div class="swatches">
+
+    <div class="swatch" style="background:var(--color-primary)">
+      Primary
+    </div>
+
+    <div class="swatch" style="background:var(--color-primary-dark)">
+      Dark
+    </div>
+
+    <div class="swatch" style="background:var(--color-accent)">
+      Accent
+    </div>
+
+    <div class="swatch" style="background:var(--color-muted)">
+      Muted
+    </div>
+
+  </div>
+
+</section>
+
+<!-- Typography Section -->
+<section class="card">
+
+  <h2>📝 Typography Scale</h2>
+
+  <p class="type-example type-xl">
+    Extra Large – --fs-xl
+  </p>
+
+  <p class="type-example type-lg">
+    Large – --fs-lg
+  </p>
+
+  <p class="type-example type-md">
+    Medium – --fs-md
+  </p>
+
+  <p class="type-example type-base">
+    Base – --fs-base
+  </p>
+
+  <p class="type-example type-sm">
+    Small – --fs-sm
+  </p>
+
+</section>
+
+<!-- Buttons Section -->
+<section class="card">
+
+  <h2>🔘 Buttons</h2>
+
+  <div class="button-group">
+
+    <button class="btn">
+      Primary Button
+    </button>
+
+    <button class="btn btn--accent">
+      Accent Button
+    </button>
+
+  </div>
+
+</section>
+
+<!-- Spacing Section -->
+<section class="card">
+
+  <h2>📏 Spacing Tokens</h2>
+
+  <p>--space-1 : 0.25rem</p>
+  <p>--space-2 : 0.5rem</p>
+  <p>--space-3 : 1rem</p>
+  <p>--space-4 : 1.5rem</p>
+  <p>--space-5 : 2.5rem</p>
+
+</section>
+
+<!-- Footer -->
+<footer>
+  <small>
+    Design Tokens | CSS Variables | HTML &amp; CSS Assignment
+  </small>
+</footer>
+```
+
+  </div>
+
+  <!-- JavaScript for Theme Toggle -->
+
+  <script>
+
+    const themeButton = document.getElementById("themeToggle");
+
+    themeButton.addEventListener("click", function () {
+
+      const currentTheme = document.documentElement.dataset.theme;
+
+      if (currentTheme === "dark") {
+        document.documentElement.dataset.theme = "";
+        themeButton.textContent = "🌙 Toggle Dark Theme";
+      } else {
+        document.documentElement.dataset.theme = "dark";
+        themeButton.textContent = "☀️ Toggle Light Theme";
+      }
+
+    });
+
+  </script>
+
+</body>
+</html>

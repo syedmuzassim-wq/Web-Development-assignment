@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Demonstration of CSS selector types.">
+  <title>CSS Selector Types</title>
+
+  <style>
+    /* 1. Universal Selector */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* 2. Element Selector */
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #dbeafe, #f0f4f8);
+      color: #222;
+      padding: 30px 15px;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    h1 {
+      text-align: center;
+      color: #1d3557;
+      margin-bottom: 10px;
+      font-size: 35px;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #555;
+      margin-bottom: 30px;
+    }
+
+    h2, h3 {
+      color: #457b9d;
+      margin-bottom: 12px;
+    }
+
+    p {
+      margin-bottom: 12px;
+    }
+
+    /* 3. Class Selector */
+    .card {
+      background: white;
+      padding: 22px;
+      margin-bottom: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+    }
+
+    .highlight {
+      background: #ffe066;
+      padding: 3px 7px;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+
+    /* 4. ID Selector */
+    #special {
+      border-left: 6px solid #e63946;
+    }
+
+    /* 5. Grouping Selector */
+    h2, h3 {
+      color: #1d6996;
+    }
+
+    /* 6. Descendant Selector */
+    .card a {
+      color: #e63946;
+      font-weight: bold;
+    }
+
+    /* 7. Child Selector */
+    ul > li {
+      margin-left: 25px;
+      padding: 5px;
+    }
+
+    /* 8. Adjacent Sibling Selector */
+    h2 + p {
+      font-weight: bold;
+    }
+
+    /* 9. Attribute Selector */
+    a[target="_blank"]::after {
+      content: " ↗";
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      width: 100%;
+      max-width: 300px;
+      border: 1px solid #999;
+      border-radius: 6px;
+    }
+
+    /* 10. Pseudo-Classes */
+    a:hover {
+      text-decoration: none;
+      background: #ffe066;
+    }
+
+    input:focus {
+      outline: 3px solid #a8dadc;
+      border-color: #457b9d;
+    }
+
+    li:nth-child(odd) {
+      color: #1d3557;
+      font-weight: bold;
+    }
+
+    /* 11. Pseudo-Element */
+    p::first-line {
+      letter-spacing: 0.5px;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 25px;
+      color: #555;
+      font-size: 14px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 600px) {
+      body {
+        padding: 20px 12px;
+      }
+
+      h1 {
+        font-size: 27px;
+      }
+
+      .card {
+        padding: 16px;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div class="container">
+
+```
+<h1>CSS Selector Playground</h1>
+<p class="subtitle">Learn and practice different types of CSS selectors.</p>
+
+<div class="card">
+  <h2>Class &amp; Element Selector</h2>
+
+  <p>
+    This bold line is styled by the
+    <span class="highlight">adjacent sibling</span>
+    selector.
+  </p>
+
+  <p>
+    This is a normal paragraph styled by the element selector.
+  </p>
+</div>
+
+<div class="card" id="special">
+  <h3>ID Selector</h3>
+
+  <p>
+    Only one element on the page may own this ID,
+    giving it a red left border.
+  </p>
+</div>
+
+<div class="card">
+  <h3>Descendant, Child &amp; Pseudo-Class</h3>
+
+  <ul>
+    <li>Odd item (nth-child)</li>
+    <li>Even item</li>
+    <li>
+      Odd item with
+      <a href="https://developer.mozilla.org/"
+         target="_blank" rel="noopener">
+        MDN (attribute selector)
+      </a>
+    </li>
+  </ul>
+
+  <p>
+    <input type="text" placeholder="Click me – :focus">
+  </p>
+</div>
+
+<footer>
+  <p>CSS Selector Practice | HTML &amp; CSS Assignment</p>
+</footer>
+```
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Responsive website using three CSS breakpoints.">
+  <title>Breakpoints Project</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background: #f3f6fa;
+      color: #222;
+    }
+
+    /* Header */
+    header {
+      background: #1f3a93;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 6%;
+    }
+
+    header strong {
+      font-size: 1.5rem;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffd166;
+    }
+
+    /* Main */
+    main {
+      max-width: 1150px;
+      margin: auto;
+      padding: 35px 25px;
+    }
+
+    h1 {
+      font-size: 2.6rem;
+      margin-bottom: 15px;
+      color: #1f3a93;
+    }
+
+    .intro {
+      margin-bottom: 25px;
+      color: #555;
+    }
+
+    /* Hero Image */
+    .hero {
+      margin-bottom: 35px;
+      border-radius: 16px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hero-text {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 25px;
+      color: white;
+      background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    }
+
+    .hero-text h2 {
+      font-size: 2rem;
+    }
+
+    /* Cards */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 25px 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.13);
+    }
+
+    .card h2 {
+      color: #1f3a93;
+      margin-bottom: 10px;
+    }
+
+    .badge {
+      display: inline-block;
+      margin-top: 22px;
+      background: #ffe8cc;
+      color: #8a4b08;
+      padding: 8px 16px;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      font-weight: bold;
+    }
+
+    /* Test Table */
+    .test-section {
+      margin-top: 40px;
+    }
+
+    .test-section h2 {
+      margin-bottom: 15px;
+      color: #1f3a93;
+    }
+
+    .table-wrapper {
+      overflow-x: auto;
+      background: white;
+      border-radius: 10px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 500px;
+    }
+
+    th, td {
+      padding: 13px;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+
+    th {
+      background: #1f3a93;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background: #f1f4fa;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      background: #1f3a93;
+      color: white;
+      padding: 18px;
+      margin-top: 40px;
+    }
+
+    /* BREAKPOINT 1: Tablets / small laptops */
+    @media (max-width: 1024px) {
+      .cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      h1 {
+        font-size: 2.2rem;
+      }
+    }
+
+    /* BREAKPOINT 2: Large phones */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        gap: 12px;
+        padding: 18px;
+      }
+
+      main {
+        padding: 25px 18px;
+      }
+
+      h1 {
+        font-size: 1.9rem;
+      }
+
+      .hero img {
+        height: 300px;
+      }
+
+      .hero-text h2 {
+        font-size: 1.5rem;
+      }
+    }
+
+    /* BREAKPOINT 3: Small phones */
+    @media (max-width: 480px) {
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px 18px;
+      }
+
+      main {
+        padding: 20px 14px;
+      }
+
+      h1 {
+        font-size: 1.7rem;
+      }
+
+      .hero img {
+        height: 230px;
+      }
+
+      .hero-text {
+        padding: 15px;
+      }
+
+      .hero-text h2 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <header>
+    <strong>Pawan's Site</strong>
+
+```
+<nav>
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact">Contact</a>
+</nav>
+```
+
+  </header>
+
+  <main>
+
+```
+<section id="home">
+  <h1>Responsive Project</h1>
+  <p class="intro">
+    A beautiful responsive website that adjusts to desktop,
+    tablet and mobile screen sizes.
+  </p>
+
+  <div class="hero">
+    <img src="C:\Users\Galaxy Book 4\Downloads\Golden Hour Mountain Riverside Cottage.png"
+         alt="Beautiful house surrounded by hills, river and forest">
+
+    <div class="hero-text">
+      <h2>Peaceful Nature Retreat</h2>
+      <p>A beautiful home surrounded by hills, river and forest.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cards">
+
+  <article class="card" id="about">
+    <h2>Home</h2>
+    <p>Welcome to my responsive website.</p>
+  </article>
+
+  <article class="card">
+    <h2>About</h2>
+    <p>Student and web developer.</p>
+  </article>
+
+  <article class="card" id="projects">
+    <h2>Projects</h2>
+    <p>45 HTML and CSS assignments.</p>
+  </article>
+
+  <article class="card" id="contact">
+    <h2>Contact</h2>
+    <p>Feel free to say hello.</p>
+  </article>
+
+</section>
+
+<span class="badge">
+  Layout: 4 Columns → 2 Columns → 1 Column
+</span>
+
+<section class="test-section">
+  <h2>Responsive Test Log</h2>
+
+  <div class="table-wrapper">
+    <table>
+      <tr>
+        <th>Device / Width</th>
+        <th>Expected Layout</th>
+        <th>Result</th>
+      </tr>
+
+      <tr>
+        <td>Desktop 1440px</td>
+        <td>4 Columns</td>
+        <td>✔ Pass</td>
+      </tr>
+
+      <tr>
+        <td>iPad Air 820px</td>
+        <td>2 Columns</td>
+        <td>✔ Pass</td>
+      </tr>
+
+      <tr>
+        <td>iPhone 14 390px</td>
+        <td>1 Column, Stacked Header</td>
+        <td>✔ Pass</td>
+      </tr>
+
+      <tr>
+        <td>Galaxy Fold 280px</td>
+        <td>No Page Horizontal Scroll</td>
+        <td>✔ Pass</td>
+      </tr>
+    </table>
+  </div>
+</section>
+```
+
+  </main>
+
+  <footer>
+    <p>© 2026 Pawan's Site | Responsive Design Project</p>
+  </footer>
+
+</body>
+</html>

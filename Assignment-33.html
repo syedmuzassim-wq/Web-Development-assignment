@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Product listing built with flex-wrap.">
+  <title>ShopEasy – Product Listing</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f1f5f9;
+      color: #1e293b;
+    }
+
+    /* HEADER */
+
+    header {
+      background: linear-gradient(120deg, #14213d, #1d3557);
+      color: white;
+      padding: 22px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    header h1 {
+      font-size: 28px;
+      letter-spacing: 1px;
+    }
+
+    header h1 span {
+      color: #ffb703;
+    }
+
+    .cart {
+      background: #ff6b35;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    /* PAGE TITLE */
+
+    .page-title {
+      text-align: center;
+      padding: 40px 15px 10px;
+    }
+
+    .page-title h2 {
+      font-size: 32px;
+      color: #1d3557;
+      margin-bottom: 8px;
+    }
+
+    .page-title p {
+      color: #64748b;
+    }
+
+    /* PRODUCT CONTAINER */
+
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+      padding: 35px 20px 60px;
+      max-width: 1250px;
+      margin: 0 auto;
+    }
+
+    /* PRODUCT CARD */
+
+    .product {
+      flex: 1 1 240px;
+      max-width: 280px;
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+      transition: 0.3s;
+    }
+
+    .product:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .product img {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+      display: block;
+      background: #e2e8f0;
+    }
+
+    .product__tag {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: #e63946;
+      color: white;
+      padding: 6px 12px;
+      font-size: 12px;
+      font-weight: bold;
+      border-radius: 20px;
+    }
+
+    .product__body {
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .product__body h2 {
+      font-size: 19px;
+      color: #1d3557;
+      margin-bottom: 8px;
+    }
+
+    .rating {
+      color: #f4a100;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .product__body p {
+      color: #64748b;
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 18px;
+    }
+
+    /* PRICE AND BUTTON */
+
+    .product__footer {
+      margin-top: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .price {
+      font-weight: 800;
+      font-size: 18px;
+      color: #16a34a;
+    }
+
+    button {
+      background: #ff6b35;
+      color: white;
+      border: none;
+      padding: 9px 16px;
+      border-radius: 7px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #e63946;
+      transform: scale(1.05);
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #14213d;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 600px) {
+      header {
+        justify-content: center;
+        text-align: center;
+      }
+
+      .page-title h2 {
+        font-size: 25px;
+      }
+
+      .products {
+        padding: 25px 15px 40px;
+        gap: 20px;
+      }
+
+      .product {
+        flex: 1 1 100%;
+        max-width: 350px;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header>
+    <h1>🛍️ Shop<span>Easy</span></h1>
+    <div class="cart">🛒 My Cart</div>
+  </header>
+
+  <!-- PAGE TITLE -->
+
+  <section class="page-title">
+    <h2>Our Latest Products</h2>
+    <p>Discover amazing products at the best prices.</p>
+  </section>
+
+  <!-- PRODUCT LIST -->
+
+  <main class="products">
+
+```
+<!-- LAPTOP -->
+
+<article class="product">
+  <span class="product__tag">BEST SELLER</span>
+
+  <img src="C:\Users\Galaxy Book 4\Downloads\Cozy Samsung Galaxy Book Workspace.png"
+    alt="Open laptop on a wooden desk">
+
+  <div class="product__body">
+    <h2>Laptop Pro 14</h2>
+
+    <div class="rating">★★★★★ <small>(120)</small></div>
+
+    <p>Fast, light and made for developers.</p>
+
+    <div class="product__footer">
+      <span class="price">₹1,64,999</span>
+      <button type="button">Add 🛒</button>
+    </div>
+  </div>
+</article>
+
+<!-- KEYBOARD -->
+
+<article class="product">
+  <span class="product__tag">-15% OFF</span>
+
+  <img src="https://picsum.photos/id/3/400/300"
+    alt="Desk setup with keyboard and monitor">
+
+  <div class="product__body">
+    <h2>Mechanical Keyboard</h2>
+
+    <div class="rating">★★★★☆ <small>(85)</small></div>
+
+    <p>
+      Tactile switches with RGB backlight and a long
+      battery-friendly design for comfortable typing.
+    </p>
+
+    <div class="product__footer">
+      <span class="price">₹4,499</span>
+      <button type="button">Add 🛒</button>
+    </div>
+  </div>
+</article>
+
+<!-- SMART WATCH -->
+
+<article class="product">
+  <span class="product__tag">POPULAR</span>
+
+  <img src="https://picsum.photos/id/26/400/300"
+    alt="Wrist watch beside a notebook">
+
+  <div class="product__body">
+    <h2>Smart Watch</h2>
+
+    <div class="rating">★★★★★ <small>(210)</small></div>
+
+    <p>Track your daily steps, activity and sleep.</p>
+
+    <div class="product__footer">
+      <span class="price">₹3,299</span>
+      <button type="button">Add 🛒</button>
+    </div>
+  </div>
+</article>
+
+<!-- HEADPHONES -->
+
+<article class="product">
+  <span class="product__tag">-20% OFF</span>
+
+  <img src="C:\Users\Galaxy Book 4\Downloads\boAt Rockerz 550 Desk Showcase.png"
+    alt="Black headphones on a table">
+
+  <div class="product__body">
+    <h2>Headphones</h2>
+
+    <div class="rating">★★★★☆ <small>(95)</small></div>
+
+    <p>Noise-cancelling with a 30-hour battery.</p>
+
+    <div class="product__footer">
+      <span class="price">₹2,799</span>
+      <button type="button">Add 🛒</button>
+    </div>
+  </div>
+</article>
+
+<!-- DSLR CAMERA -->
+
+<article class="product">
+  <span class="product__tag">NEW</span>
+
+  <img src="C:\Users\Galaxy Book 4\Downloads\Leica Camera in Warm Studio Light.png"
+    alt="Camera lens close-up">
+
+  <div class="product__body">
+    <h2>DSLR Camera</h2>
+
+    <div class="rating">★★★★★ <small>(150)</small></div>
+
+    <p>24 MP sensor with high-quality 4K video.</p>
+
+    <div class="product__footer">
+      <span class="price">₹4,42,000</span>
+      <button type="button">Add 🛒</button>
+    </div>
+  </div>
+</article>
+```
+
+  </main>
+
+  <!-- FOOTER -->
+
+  <footer>
+    <p>© 2026 ShopEasy | All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>

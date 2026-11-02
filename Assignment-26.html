@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Annotated box model of a real element.">
+
+  <title>CSS Box Model – Annotated</title>
+
+  <style>
+
+    /* Universal Selector */
+    * {
+      box-sizing: border-box;
+    }
+
+    /* Body Styling */
+    body {
+      font-family: system-ui, sans-serif;
+      background: #f0f4f8;
+      color: #222;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 25px;
+      line-height: 1.6;
+    }
+
+    /* Main Heading */
+    h1 {
+      text-align: center;
+      color: #1d3557;
+      font-size: 32px;
+      margin-bottom: 25px;
+    }
+
+    h2 {
+      color: #1d3557;
+      margin-top: 35px;
+      margin-bottom: 15px;
+      border-bottom: 3px solid #457b9d;
+      padding-bottom: 8px;
+    }
+
+    /* Code Styling */
+    code {
+      background: #e1e8f0;
+      color: #d63384;
+      padding: 3px 7px;
+      border-radius: 5px;
+      font-size: 15px;
+    }
+
+    /* Demo Container */
+    .demo {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, .1);
+    }
+
+    /* THE ELEMENT BEING ANALYSED */
+    .my-box {
+      width: 200px;
+      height: 80px;
+
+      /* Content: 200 x 80 */
+      padding: 20px;
+
+      /* Border: 10px */
+      border: 10px solid #1d3557;
+
+      /* Margin: 30px */
+      margin: 30px;
+
+      background: #a8dadc;
+
+      display: grid;
+      place-items: center;
+      font-weight: bold;
+      color: #1d3557;
+      flex-shrink: 0;
+    }
+
+    /* Visual Layers */
+    .layer {
+      display: grid;
+      place-items: center;
+      position: relative;
+      text-align: center;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .l-margin {
+      background: #f9cb9c;
+      padding: 36px;
+    }
+
+    .l-border {
+      background: #ffe599;
+      padding: 22px;
+    }
+
+    .l-padding {
+      background: #b6d7a8;
+      padding: 36px;
+    }
+
+    .l-content {
+      background: #9fc5e8;
+      padding: 28px 40px;
+      color: #1d3557;
+    }
+
+    .tag {
+      position: absolute;
+      top: 3px;
+      left: 8px;
+      font-weight: bold;
+      font-size: 11px;
+    }
+
+    /* Table Styling */
+    .table-wrapper {
+      overflow-x: auto;
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 3px 12px rgba(0, 0, 0, .08);
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      min-width: 500px;
+    }
+
+    th,
+    td {
+      border: 1px solid #ccc;
+      padding: 13px;
+      text-align: left;
+    }
+
+    th {
+      background: #1d3557;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background: #edf3f8;
+    }
+
+    tr:hover {
+      background: #dceaf5;
+    }
+
+    /* Explanation Box */
+    .info {
+      background: #e3f2fd;
+      border-left: 5px solid #2196f3;
+      padding: 18px;
+      margin-top: 15px;
+      border-radius: 7px;
+    }
+
+    .tip {
+      background: #fff3cd;
+      border-left: 5px solid #ffc107;
+      padding: 18px;
+      margin-top: 20px;
+      border-radius: 7px;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      margin-top: 35px;
+      padding: 18px;
+      color: #555;
+      background: white;
+      border-radius: 8px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 600px) {
+
+      body {
+        padding: 15px;
+      }
+
+      h1 {
+        font-size: 25px;
+      }
+
+      h2 {
+        font-size: 21px;
+      }
+
+      .demo {
+        padding: 20px 10px;
+        gap: 30px;
+      }
+
+      .my-box {
+        margin: 15px;
+      }
+
+      .l-margin {
+        padding: 25px;
+      }
+
+      .l-border {
+        padding: 17px;
+      }
+
+      .l-padding {
+        padding: 25px;
+      }
+
+      .l-content {
+        padding: 20px 25px;
+      }
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <h1>CSS Box Model of <code>.my-box</code></h1>
+
+  <!-- Box Model Demonstration -->
+
+  <div class="demo">
+
+```
+<!-- Actual Box -->
+<div class="my-box">
+  Hello
+</div>
+
+<!-- Annotated Diagram -->
+<div class="layer l-margin">
+
+  <span class="tag">MARGIN 30px</span>
+
+  <div class="layer l-border">
+
+    <span class="tag">BORDER 10px</span>
+
+    <div class="layer l-padding">
+
+      <span class="tag">PADDING 20px</span>
+
+      <div class="layer l-content">
+        CONTENT<br>
+        200 × 80
+      </div>
+
+    </div>
+  </div>
+</div>
+```
+
+  </div>
+
+  <!-- Calculation Section -->
+
+  <h2>📐 Box Model Calculation</h2>
+
+  <div class="table-wrapper">
+
+```
+<table>
+
+  <tr>
+    <th>Property</th>
+    <th>Calculation</th>
+    <th>Total</th>
+  </tr>
+
+  <tr>
+    <td>Content Width</td>
+    <td>200px</td>
+    <td>200px</td>
+  </tr>
+
+  <tr>
+    <td>Total Width</td>
+    <td>200 + (20 × 2) + (10 × 2)</td>
+    <td><strong>260px</strong></td>
+  </tr>
+
+  <tr>
+    <td>Width with Margin</td>
+    <td>260 + (30 × 2)</td>
+    <td><strong>320px</strong></td>
+  </tr>
+
+  <tr>
+    <td>Total Height</td>
+    <td>80 + (20 × 2) + (10 × 2)</td>
+    <td><strong>140px</strong></td>
+  </tr>
+
+  <tr>
+    <td>Height with Margin</td>
+    <td>140 + (30 × 2)</td>
+    <td><strong>200px</strong></td>
+  </tr>
+
+</table>
+```
+
+  </div>
+
+  <!-- Border Box Explanation -->
+
+  <h2>📦 With box-sizing: border-box</h2>
+
+  <div class="info">
+
+```
+<p>
+  The same <code>width: 200px</code> would already include
+  padding and border, so the box would stay 200px wide.
+</p>
+
+<p>
+  The content width shrinks to 140px because:
+  200 - 40px padding - 20px border = 140px.
+</p>
+
+<p>
+  That's why most developers add:
+  <code>* { box-sizing: border-box; }</code>
+</p>
+```
+
+  </div>
+
+  <!-- Tip Section -->
+
+  <div class="tip">
+
+```
+<strong>💡 Tip:</strong>
+
+<p>
+  Open DevTools (F12) → Elements → Computed tab to see
+  the box model diagram for any element. You can take
+  a screenshot for your assignment submission.
+</p>
+```
+
+  </div>
+
+  <!-- Footer -->
+
+  <footer>
+
+```
+<small>CSS Box Model | HTML &amp; CSS Assignment</small>
+```
+
+  </footer>
+
+</body>
+
+</html>

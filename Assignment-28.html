@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Fixing overflow that breaks a layout.">
+  <title>Fixing Overflow Problems</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(135deg, #e0f2fe, #f0fdf4);
+      color: #1e293b;
+      padding: 30px 15px;
+      line-height: 1.6;
+    }
+
+    .wrapper {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    header h1 {
+      color: #1d3557;
+      font-size: 2.3rem;
+      margin-bottom: 8px;
+    }
+
+    header p {
+      color: #64748b;
+    }
+
+    .column {
+      width: 100%;
+      background: white;
+      padding: 22px;
+      border: 1px solid #dbeafe;
+      border-left: 5px solid #2563eb;
+      border-radius: 12px;
+      margin-bottom: 22px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+    }
+
+    .column h2 {
+      color: #1d3557;
+      margin-bottom: 15px;
+      font-size: 1.3rem;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 10px;
+    }
+
+    .long-text {
+      overflow-wrap: anywhere;
+    }
+
+    .long-text p {
+      background: #eff6ff;
+      padding: 12px;
+      border-radius: 8px;
+      color: #1e40af;
+    }
+
+    .table-scroll {
+      overflow-x: auto;
+      border-radius: 8px;
+    }
+
+    table {
+      width: 100%;
+      min-width: 650px;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    th {
+      background: #1d3557;
+      color: white;
+      padding: 12px;
+    }
+
+    td {
+      padding: 12px;
+      border: 1px solid #cbd5e1;
+    }
+
+    tr:nth-child(even) {
+      background: #eff6ff;
+    }
+
+    .fixed-box {
+      height: 110px;
+      overflow-y: auto;
+      border: 1px solid #93c5fd;
+      padding: 12px;
+      border-radius: 8px;
+      background: #f8fafc;
+    }
+
+    pre {
+      overflow-x: auto;
+      background: #172554;
+      color: #bfdbfe;
+      padding: 18px;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    .tip {
+      background: #dcfce7;
+      border-left: 4px solid #16a34a;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 10px;
+      color: #166534;
+    }
+
+    footer {
+      text-align: center;
+      color: #64748b;
+      margin-top: 30px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 18px 12px;
+      }
+
+      header h1 {
+        font-size: 1.7rem;
+      }
+
+      .column {
+        padding: 15px;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div class="wrapper">
+
+```
+<header>
+  <h1>Overflow – Fixed</h1>
+  <p>Learn how to fix common CSS overflow problems.</p>
+</header>
+
+<main>
+
+  <section class="column">
+    <h2>1. Responsive Image</h2>
+    <img src="C:\Users\Galaxy Book 4\Downloads\wallpaperflare.com_wallpaper (1).jpg"
+      alt="A rower on a calm lake">
+    <div class="tip">
+      <strong>Fix:</strong> max-width: 100% prevents images from exceeding their container.
+    </div>
+  </section>
+
+  <section class="column long-text">
+    <h2>2. Long Unbroken Text</h2>
+    <p>
+      https://www.example.com/this/is/a/very/long/url/that/would/normally/stretch/the/layout/sideways/forever/and/ever
+    </p>
+    <div class="tip">
+      <strong>Fix:</strong> overflow-wrap: anywhere allows long URLs and words to wrap.
+    </div>
+  </section>
+
+  <section class="column">
+    <h2>3. Wide Table</h2>
+
+    <div class="table-scroll">
+      <table>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>City</th>
+          <th>Course</th>
+          <th>Year</th>
+        </tr>
+
+        <tr>
+          <td>1</td>
+          <td>Pawan</td>
+          <td>pawan@gmail.com</td>
+          <td>Bareilly</td>
+          <td>BCA-AI</td>
+          <td>2028</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="tip">
+      <strong>Fix:</strong> overflow-x: auto makes the table scroll horizontally when needed.
+    </div>
+  </section>
+
+  <section class="column">
+    <h2>4. Fixed-Height Box</h2>
+
+    <div class="fixed-box">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Sed do eiusmod tempor incididunt ut labore et dolore magna
+      aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      Duis aute irure dolor in reprehenderit in voluptate velit
+      esse cillum dolore eu fugiat nulla pariatur.
+    </div>
+
+    <div class="tip">
+      <strong>Fix:</strong> overflow-y: auto adds vertical scrolling when content is too long.
+    </div>
+  </section>
+
+  <section class="column">
+    <h2>5. Code Block</h2>
+
+    <pre>const message = "This line is intentionally very long so that it would overflow the container if not for overflow-x: auto";</pre>
+
+    <div class="tip">
+      <strong>Fix:</strong> overflow-x: auto allows long code to scroll horizontally.
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>HTML & CSS Practice | Overflow Problems</p>
+</footer>
+```
+
+  </div>
+
+</body>
+</html>

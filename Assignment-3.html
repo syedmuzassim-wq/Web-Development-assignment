@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terminal Navigation Practice Sheet</title>
+</head>
+<body>
+
+    <h1>Terminal Navigation Practice Sheet</h1>
+
+    <p>Commands for macOS / Linux / Git Bash (Windows PowerShell equivalents in the last column).</p>
+
+    <table border="1">
+        <tr>
+            <th>#</th>
+            <th>Task</th>
+            <th>Command</th>
+            <th>PowerShell</th>
+        </tr>
+
+        <tr><td>1</td><td>Show current folder</td><td><code>pwd</code></td><td><code>pwd</code></td></tr>
+        <tr><td>2</td><td>List files</td><td><code>ls</code></td><td><code>ls</code></td></tr>
+        <tr><td>3</td><td>List with details + hidden files</td><td><code>ls -la</code></td><td><code>ls -Force</code></td></tr>
+        <tr><td>4</td><td>Create a folder</td><td><code>mkdir practice</code></td><td><code>mkdir practice</code></td></tr>
+        <tr><td>5</td><td>Enter the folder</td><td><code>cd practice</code></td><td><code>cd practice</code></td></tr>
+        <tr><td>6</td><td>Create an empty file</td><td><code>touch index.html</code></td><td><code>ni index.html</code></td></tr>
+        <tr><td>7</td><td>Create nested folders</td><td><code>mkdir -p css/images</code></td><td><code>mkdir css/images</code></td></tr>
+        <tr><td>8</td><td>Go up one level</td><td><code>cd ..</code></td><td><code>cd ..</code></td></tr>
+        <tr><td>9</td><td>Go to home directory</td><td><code>cd ~</code></td><td><code>cd ~</code></td></tr>
+        <tr><td>10</td><td>Copy a file</td><td><code>cp index.html backup.html</code></td><td><code>cp index.html backup.html</code></td></tr>
+        <tr><td>11</td><td>Rename / move a file</td><td><code>mv backup.html old.html</code></td><td><code>mv backup.html old.html</code></td></tr>
+        <tr><td>12</td><td>Delete a file</td><td><code>rm old.html</code></td><td><code>rm old.html</code></td></tr>
+        <tr><td>13</td><td>Delete a folder</td><td><code>rm -r css</code></td><td><code>rm -r css</code></td></tr>
+        <tr><td>14</td><td>Print file contents</td><td><code>cat index.html</code></td><td><code>cat index.html</code></td></tr>
+        <tr><td>15</td><td>Clear the screen</td><td><code>clear</code></td><td><code>cls</code></td></tr>
+        <tr><td>16</td><td>Open folder in VS Code</td><td><code>code .</code></td><td><code>code .</code></td></tr>
+    </table>
+
+    <h2>Practice Exercise</h2>
+
+    <p>Starting from your home directory, do the following and write down every command used:</p>
+
+    <ol>
+        <li>Create <code>website/</code> containing <code>index.html</code>, <code>css/style.css</code>, <code>images/</code>.</li>
+        <li>Go into <code>css</code>, then return to <code>website</code> with a single command (<code>cd ..</code>).</li>
+        <li>List everything recursively: <code>ls -R</code>.</li>
+        <li>Rename <code>index.html</code> to <code>home.html</code>, then rename it back.</li>
+        <li>Open the folder in VS Code.</li>
+    </ol>
+
+    <h2>Answers</h2>
+
+    <pre><code>cd ~
+mkdir -p website/css website/images
+touch website/index.html website/css/style.css
+cd website/css
+cd ..
+ls -R
+mv index.html home.html
+mv home.html index.html
+code .</code></pre>
+
+</body>
+</html>
+```

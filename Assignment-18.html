@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="T-shirt size chart">
+
+  <title>Product Size Chart</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #74ebd5, #9face6);
+      min-height: 100vh;
+      padding: 40px 15px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    h1 {
+      text-align: center;
+      color: #263238;
+      margin-bottom: 25px;
+      font-size: 30px;
+    }
+
+    .table-wrapper {
+      width: 100%;
+      overflow-x: auto;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      min-width: 650px;
+      margin: auto;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    caption {
+      font-weight: bold;
+      padding: 15px;
+      font-size: 16px;
+      color: #374151;
+    }
+
+    th,
+    td {
+      border: 1px solid #ddd;
+      padding: 14px;
+      text-align: center;
+    }
+
+    thead {
+      background: #263238;
+      color: white;
+    }
+
+    thead th {
+      padding: 16px;
+    }
+
+    tbody tr:nth-child(even) {
+      background: #f1f5f9;
+    }
+
+    tbody tr:nth-child(odd) {
+      background: #ffffff;
+    }
+
+    tbody tr:hover {
+      background: #dbeafe;
+      transition: 0.3s;
+    }
+
+    tbody th {
+      color: #2563eb;
+      font-size: 17px;
+    }
+
+    tfoot {
+      background: #e0f2fe;
+      font-weight: bold;
+    }
+
+    tfoot td {
+      text-align: left;
+      padding: 15px;
+      color: #075985;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 20px 10px;
+      }
+
+      .container {
+        padding: 18px;
+      }
+
+      h1 {
+        font-size: 23px;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div class="container">
+
+```
+<h1>Classic Cotton T-Shirt – Size Chart</h1>
+
+<div class="table-wrapper">
+
+  <table>
+
+    <caption>
+      Measurements in centimetres (cm) and inches (in)
+    </caption>
+
+    <thead>
+      <tr>
+        <th rowspan="2" scope="col">Size</th>
+        <th colspan="2" scope="colgroup">Chest</th>
+        <th colspan="2" scope="colgroup">Length</th>
+        <th rowspan="2" scope="col">Fits Weight</th>
+      </tr>
+
+      <tr>
+        <th scope="col">cm</th>
+        <th scope="col">in</th>
+        <th scope="col">cm</th>
+        <th scope="col">in</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+      <tr>
+        <th scope="row">S</th>
+        <td>92</td>
+        <td>36</td>
+        <td>68</td>
+        <td>27</td>
+        <td>55–62 kg</td>
+      </tr>
+
+      <tr>
+        <th scope="row">M</th>
+        <td>98</td>
+        <td>38.5</td>
+        <td>70</td>
+        <td>27.5</td>
+        <td>63–72 kg</td>
+      </tr>
+
+      <tr>
+        <th scope="row">L</th>
+        <td>104</td>
+        <td>41</td>
+        <td>72</td>
+        <td>28.5</td>
+        <td>73–82 kg</td>
+      </tr>
+
+      <tr>
+        <th scope="row">XL</th>
+        <td>110</td>
+        <td>43</td>
+        <td>74</td>
+        <td>29</td>
+        <td>83–92 kg</td>
+      </tr>
+
+      <tr>
+        <th scope="row">XXL</th>
+        <td>116</td>
+        <td>45.5</td>
+        <td>76</td>
+        <td>30</td>
+        <td>93–105 kg</td>
+      </tr>
+
+    </tbody>
+
+    <tfoot>
+      <tr>
+        <td colspan="6">
+          Tip: If you are between two sizes, choose the larger one.
+        </td>
+      </tr>
+    </tfoot>
+
+  </table>
+
+</div>
+```
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Responsive analytics dashboard using CSS Grid named areas.">
+
+  <title>Analytics Dashboard | CSS Grid</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #eef1f8;
+      color: #26334d;
+    }
+
+    /* Main Dashboard Layout */
+    .dashboard {
+      display: grid;
+      min-height: 100vh;
+      grid-template-columns: 230px repeat(3, 1fr);
+      grid-template-rows: 70px auto 1fr 55px;
+
+      grid-template-areas:
+        "header header header header"
+        "sidebar stat1 stat2 stat3"
+        "sidebar chart chart activity"
+        "footer footer footer footer";
+
+      gap: 18px;
+      padding: 0 18px 18px 0;
+    }
+
+    .dashboard > * {
+      border-radius: 12px;
+      padding: 20px;
+    }
+
+    /* Header */
+    .header {
+      grid-area: header;
+      background: linear-gradient(120deg, #1f2a44, #344b78);
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 30px;
+      border-radius: 0;
+    }
+
+    .header strong {
+      font-size: 24px;
+    }
+
+    .user {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: #748ffc;
+      display: grid;
+      place-items: center;
+      font-weight: bold;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      grid-area: sidebar;
+      background: #26385f;
+      color: white;
+      border-radius: 0 12px 12px 0;
+      padding: 25px 18px;
+    }
+
+    .sidebar h2 {
+      font-size: 19px;
+      margin-bottom: 25px;
+      color: #a5c8ff;
+    }
+
+    .sidebar ul {
+      list-style: none;
+    }
+
+    .sidebar li {
+      padding: 14px 12px;
+      margin-bottom: 8px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .sidebar li:hover,
+    .sidebar li.active {
+      background: #405b91;
+    }
+
+    /* Statistic Cards */
+    .stat1 {
+      grid-area: stat1;
+    }
+
+    .stat2 {
+      grid-area: stat2;
+    }
+
+    .stat3 {
+      grid-area: stat3;
+    }
+
+    .stat {
+      background: white;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      transition: 0.3s;
+    }
+
+    .stat:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .stat p {
+      color: #75819a;
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 30px;
+      color: #26385f;
+      margin-bottom: 10px;
+    }
+
+    .growth {
+      color: #159b65;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    /* Chart Section */
+    .chart {
+      grid-area: chart;
+      background: white;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .section-heading h2 {
+      font-size: 20px;
+    }
+
+    .section-heading span {
+      color: #75819a;
+      font-size: 13px;
+    }
+
+    .bars {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-around;
+      gap: 12px;
+      height: 190px;
+      margin-top: 25px;
+      border-bottom: 1px solid #dfe4ed;
+      padding: 0 10px;
+    }
+
+    .bar-group {
+      flex: 1;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .bars span {
+      display: block;
+      width: 65%;
+      max-width: 45px;
+      background: linear-gradient(to top, #3b5bdb, #748ffc);
+      border-radius: 6px 6px 0 0;
+      transition: 0.3s;
+    }
+
+    .bars span:hover {
+      background: linear-gradient(to top, #26385f, #4dabf7);
+    }
+
+    .bar-group small {
+      color: #75819a;
+      font-size: 12px;
+    }
+
+    /* Activity */
+    .activity {
+      grid-area: activity;
+      background: white;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .activity h2 {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    .activity ul {
+      list-style: none;
+    }
+
+    .activity li {
+      padding: 14px 0;
+      border-bottom: 1px solid #edf0f5;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .activity li:last-child {
+      border-bottom: none;
+    }
+
+    .activity small {
+      display: block;
+      color: #8792a8;
+      margin-top: 5px;
+    }
+
+    /* Footer */
+    .footer {
+      grid-area: footer;
+      background: white;
+      text-align: center;
+      color: #75819a;
+      font-size: 14px;
+      padding: 18px;
+      border-radius: 10px;
+    }
+
+    /* Tablet Responsive */
+    @media (max-width: 900px) {
+      .dashboard {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+          "header header"
+          "stat1 stat2"
+          "stat3 stat3"
+          "chart chart"
+          "activity activity"
+          "sidebar sidebar"
+          "footer footer";
+        padding: 0 12px 12px;
+        gap: 14px;
+      }
+
+      .sidebar {
+        border-radius: 12px;
+      }
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 500px) {
+      .dashboard {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "header"
+          "stat1"
+          "stat2"
+          "stat3"
+          "chart"
+          "activity"
+          "sidebar"
+          "footer";
+        padding: 0 10px 10px;
+      }
+
+      .header {
+        padding: 0 15px;
+      }
+
+      .header strong {
+        font-size: 20px;
+      }
+
+      .user {
+        font-size: 13px;
+      }
+
+      .dashboard > * {
+        padding: 16px;
+      }
+
+      .bars {
+        gap: 5px;
+      }
+
+      .stat strong {
+        font-size: 26px;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <main class="dashboard">
+
+```
+<!-- Header -->
+<header class="header">
+  <strong>📊 Analytics Dashboard</strong>
+
+  <div class="user">
+    <div class="avatar">A</div>
+    <span>Hello, Pawan</span>
+  </div>
+</header>
+
+<!-- Sidebar -->
+<aside class="sidebar">
+  <h2>Dashboard Menu</h2>
+
+  <ul>
+    <li class="active">📊 Overview</li>
+    <li>👥 Users</li>
+    <li>💰 Sales</li>
+    <li>📈 Reports</li>
+    <li>⚙️ Settings</li>
+  </ul>
+</aside>
+
+<!-- Statistics -->
+<section class="stat stat1">
+  <p>👥 Total Visitors</p>
+  <strong>12,480</strong>
+  <span class="growth">↑ 10.5% this month</span>
+</section>
+
+<section class="stat stat2">
+  <p>🛒 Total Orders</p>
+  <strong>842</strong>
+  <span class="growth">↑ 6.2% this month</span>
+</section>
+
+<section class="stat stat3">
+  <p>💰 Total Revenue</p>
+  <strong>₹4.2L</strong>
+  <span class="growth">↑ 12.8% this month</span>
+</section>
+
+<!-- Sales Chart -->
+<section class="chart">
+
+  <div class="section-heading">
+    <h2>Weekly Sales</h2>
+    <span>Last 7 Days</span>
+  </div>
+
+  <div class="bars" aria-label="Weekly sales chart">
+
+    <div class="bar-group">
+      <span style="height:40%"></span>
+      <small>Mon</small>
+    </div>
+
+    <div class="bar-group">
+      <span style="height:65%"></span>
+      <small>Tue</small>
+    </div>
+
+    <div class="bar-group">
+      <span style="height:50%"></span>
+      <small>Wed</small>
+    </div>
+
+    <div class="bar-group">
+      <span style="height:85%"></span>
+      <small>Thu</small>
+    </div>
+
+    <div class="bar-group">
+      <span style="height:70%"></span>
+      <small>Fri</small>
+    </div>
+
+    <div class="bar-group">
+      <span style="height:95%"></span>
+      <small>Sat</small>
+    </div>
+
+    <div class="bar-group">
+      <span style="height:60%"></span>
+      <small>Sun</small>
+    </div>
+
+  </div>
+</section>
+
+<!-- Recent Activity -->
+<section class="activity">
+
+  <h2>Recent Activity</h2>
+
+  <ul>
+    <li>
+      🛒 New order #842
+      <small>10 minutes ago</small>
+    </li>
+
+    <li>
+      👤 New user registered
+      <small>30 minutes ago</small>
+    </li>
+
+    <li>
+      💳 Payment received
+      <small>1 hour ago</small>
+    </li>
+
+    <li>
+      ↩️ Refund processed
+      <small>2 hours ago</small>
+    </li>
+  </ul>
+
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  © 2026 Analytics Inc. | All Rights Reserved.
+</footer>
+```
+
+  </main>
+
+</body>
+</html>

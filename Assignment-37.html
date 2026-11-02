@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Responsive product grid using CSS Grid auto-fit and minmax.">
+
+  <title>FreshMart | Our Products</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f7f6;
+      color: #263238;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 7%;
+      background: white;
+      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .logo {
+      font-size: 26px;
+      font-weight: bold;
+      color: #13865c;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: #263238;
+      font-weight: bold;
+      margin-left: 20px;
+      transition: 0.3s;
+    }
+
+    .navbar a:hover {
+      color: #13865c;
+    }
+
+    .heading {
+      text-align: center;
+      padding: 45px 15px 15px;
+    }
+
+    .heading h1 {
+      font-size: clamp(28px, 5vw, 40px);
+      color: #145a42;
+      margin-bottom: 12px;
+    }
+
+    .heading p {
+      color: #68777b;
+      line-height: 1.6;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+      max-width: 1200px;
+      margin: 35px auto;
+      padding: 0 20px;
+    }
+
+    .card {
+      position: relative;
+      background: white;
+      border-radius: 15px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+      transition: transform 0.3s, box-shadow 0.3s;
+      overflow: hidden;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.13);
+    }
+
+    .card img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border-radius: 10px;
+      transition: transform 0.4s;
+    }
+
+    .card:hover img {
+      transform: scale(1.04);
+    }
+
+    .badge {
+      position: absolute;
+      top: 25px;
+      left: 25px;
+      background: #e85d04;
+      color: white;
+      padding: 6px 10px;
+      border-radius: 5px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .card h2 {
+      font-size: 19px;
+      margin: 15px 0 8px;
+      color: #263238;
+    }
+
+    .rating {
+      color: #f4a300;
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+
+    .price {
+      color: #13865c;
+      font-size: 21px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .old-price {
+      color: #999;
+      text-decoration: line-through;
+      font-size: 14px;
+      margin-left: 5px;
+      font-weight: normal;
+    }
+
+    .buy-btn {
+      display: block;
+      width: 100%;
+      padding: 11px;
+      border: none;
+      border-radius: 8px;
+      background: #13865c;
+      color: white;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .buy-btn:hover {
+      background: #0b6040;
+    }
+
+    footer {
+      background: #145a42;
+      color: white;
+      text-align: center;
+      padding: 22px;
+      margin-top: 50px;
+    }
+
+    footer p {
+      font-size: 14px;
+    }
+
+    @media (max-width: 500px) {
+      .navbar {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .navbar a {
+        margin: 0 8px;
+      }
+
+      .grid {
+        gap: 18px;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <nav class="navbar">
+
+```
+<div class="logo">🥬 FreshMart</div>
+
+<div>
+  <a href="#">Home</a>
+  <a href="#products">Products</a>
+  <a href="#contact">Contact</a>
+</div>
+```
+
+  </nav>
+
+  <header class="heading">
+    <h1>Our Fresh Products</h1>
+    <p>Fresh quality products at the best prices.</p>
+  </header>
+
+  <main class="grid" id="products">
+<article class="card">
+  <span class="badge">Best Seller</span>
+  <img src="https://picsum.photos/id/1060/400/300"
+    alt="Coffee being poured into a cup">
+  <h2>Coffee Beans</h2>
+  <p class="rating">★★★★★ (4.8)</p>
+  <p class="price">₹499 <span class="old-price">₹599</span></p>
+  <button class="buy-btn">Add to Cart</button>
+</article>
+
+<article class="card">
+  <span class="badge">20% OFF</span>
+  <img src="https://picsum.photos/id/1080/400/300"
+    alt="Fresh food photography">
+  <h2>Strawberries</h2>
+  <p class="rating">★★★★★ (4.7)</p>
+  <p class="price">₹199 <span class="old-price">₹249</span></p>
+  <button class="buy-btn">Add to Cart</button>
+</article>
+
+<article class="card">
+  <span class="badge">20% OFF</span>
+  <img src="C:\Users\Galaxy Book 4\Downloads\Colorful Fruit Basket on a Cozy Workspace.png"
+    alt="Fresh fruits photography">
+  <h2>Strawberries</h2>
+  <p class="rating">★★★★★ (4.7)</p>
+  <p class="price">₹699 <span class="old-price">₹1099</span></p>
+  <button class="buy-btn">Add to Cart</button>
+</article>
+
+<article class="card">
+  <img src="https://picsum.photos/id/292/400/300"
+    alt="Food product on a wooden board">
+  <h2>Sourdough Bread</h2>
+  <p class="rating">★★★★☆ (4.5)</p>
+  <p class="price">₹149</p>
+  <button class="buy-btn">Add to Cart</button>
+</article>
+
+<article class="card">
+  <img src="C:\Users\Galaxy Book 4\Downloads\Cheesy Loaded Pizza Pull.png"
+    alt="Food product on a wooden board">
+  <h2>Pizza</h2>
+  <p class="rating">★★★★☆ (4.5)</p>
+  <p class="price">₹349</p>
+  <button class="buy-btn">Add to Cart</button>
+</article>
+
+<article class="card">
+  <span class="badge">Popular</span>
+  <img src="https://picsum.photos/id/312/400/300"
+    alt="Food product photography">
+  <h2>Honey Jar</h2>
+  <p class="rating">★★★★★ (4.9)</p>
+  <p class="price">₹329</p>
+  <button class="buy-btn">Add to Cart</button>
+</article>
+
+<article class="card">
+  <img src="https://picsum.photos/id/429/400/300"
+    alt="Tea beside a book">
+  <h2>Green Tea</h2>
+  <p class="rating">★★★★☆ (4.6)</p>
+  <p class="price">₹259</p>
+  <button class="buy-btn">Add to Cart</button>
+</article>
+
+<article class="card">
+  <span class="badge">New</span>
+  <img src="https://picsum.photos/id/493/400/300"
+    alt="Colorful food ingredients">
+  <h2>Spice Box</h2>
+  <p class="rating">★★★★★ (4.8)</p>
+  <p class="price">₹599</p>
+  <button class="buy-btn">Add to Cart</button>
+</article>
+
+<article class="card">
+  <img src="https://picsum.photos/id/835/400/300"
+    alt="Food and kitchen product">
+  <h2>Olive Oil</h2>
+  <p class="rating">★★★★☆ (4.5)</p>
+  <p class="price">₹749</p>
+  <button class="buy-btn">Add to Cart</button>
+</article>
+```
+
+  </main>
+
+  <footer id="contact">
+    <p>© 2026 FreshMart | All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>

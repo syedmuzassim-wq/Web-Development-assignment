@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Pawan Singh Kushwaha's personal blog and portfolio.">
+
+  <title>Pawan's Blog &amp; Portfolio</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f1f5f9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1e3a8a, #2563eb);
+      color: white;
+      text-align: center;
+      padding: 35px 20px;
+    }
+
+    header h1 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 25px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #facc15;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    section {
+      background: white;
+      padding: 25px;
+      margin-bottom: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    h2 {
+      color: #1e40af;
+      margin-bottom: 18px;
+      border-bottom: 2px solid #dbeafe;
+      padding-bottom: 8px;
+    }
+
+    h3 {
+      color: #1e3a8a;
+      margin-bottom: 8px;
+    }
+
+    #about img {
+      width: 130px;
+      height: 130px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid #2563eb;
+      margin-bottom: 15px;
+    }
+
+    article {
+      background: #f8fafc;
+      padding: 18px;
+      margin-bottom: 15px;
+      border-left: 4px solid #2563eb;
+      border-radius: 8px;
+    }
+
+    article time {
+      color: #64748b;
+      font-size: 14px;
+    }
+
+    blockquote {
+      margin-top: 12px;
+      padding: 10px 15px;
+      background: #dbeafe;
+      border-left: 4px solid #1d4ed8;
+      font-style: italic;
+    }
+
+    section ul {
+      padding-left: 22px;
+    }
+
+    section li {
+      margin: 10px 0;
+    }
+
+    a {
+      color: #2563eb;
+    }
+
+    section a {
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    section a:hover {
+      text-decoration: underline;
+      color: #1e3a8a;
+    }
+
+    footer {
+      background: #172554;
+      color: white;
+      text-align: center;
+      padding: 22px;
+      margin-top: 30px;
+    }
+
+    footer a {
+      color: #facc15;
+      text-decoration: none;
+    }
+
+    footer p {
+      margin: 5px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 25px;
+      }
+
+      nav ul {
+        gap: 12px;
+      }
+
+      section {
+        padding: 18px;
+      }
+    }
+  </style>
+
+</head>
+
+<body id="top">
+
+  <header>
+    <h1>Pawan's Blog &amp; Portfolio</h1>
+
+```
+<nav>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#blog">Blog</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+```
+
+  </header>
+
+  <main>
+
+```
+<section id="about">
+  <h2>About Me</h2>
+
+  <img
+    src="C:\Users\Galaxy Book 4\Downloads\wallpaperflare.com_wallpaper.jpg"
+    alt="Profile portrait">
+
+  <p>Hello! I write about what I learn while becoming a web developer.</p>
+</section>
+
+<section id="blog">
+  <h2>Latest Posts</h2>
+
+  <article>
+    <h3>Why Semantic HTML Matters</h3>
+    <p><time datetime="2026-09-10">10 Sep 2026</time> · 3 min read</p>
+
+    <p>
+      Semantic tags like <code>&lt;main&gt;</code> and
+      <code>&lt;nav&gt;</code> help screen readers and search
+      engines understand your page.
+    </p>
+  </article>
+
+  <article>
+    <h3>My First Git Commit</h3>
+    <p><time datetime="2026-09-18">18 Sep 2026</time> · 2 min read</p>
+
+    <p>
+      Git felt scary until I realised it is just a save-game
+      system for code.
+    </p>
+
+    <blockquote>
+      "Commit early, commit often."
+    </blockquote>
+  </article>
+</section>
+
+<section id="portfolio">
+  <h2>Portfolio</h2>
+
+  <ul>
+    <li><a href="http://127.0.0.1:5500/Assignment-1/Assignment-2/que08-resume-semantic.html">Semantic Resume</a></li>
+    <li><a href="http://127.0.0.1:5500/Assignment-1/Assignment-2/Que13-my-college-course.html">College &amp; Course Page</a></li>
+    <li><a href="http://127.0.0.1:5500/Assignment-1/Assignment-2/Que12-images-with-alt.html">Accessible Image Gallery</a></li>
+  </ul>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+
+  <p>
+    Email:
+    <a href="mailto:pawan@example.com">pawan@example.com</a>
+  </p>
+</section>
+```
+
+  </main>
+
+  <footer>
+    <p><a href="#top">Back to Top ↑</a></p>
+    <p><small>&copy; 2026 Pawan Singh Kushwaha</small></p>
+  </footer>
+
+</body>
+</html>

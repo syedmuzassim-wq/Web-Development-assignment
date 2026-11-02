@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Famous Temples – Ayodhya & Gorakhpur</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #fff8ed;
+      color: #432b1c;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #713b19;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2rem;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 45px 20px;
+      background: #f5dfc2;
+    }
+
+    .hero h2 {
+      font-size: 2rem;
+      color: #743d17;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+    }
+
+    .places {
+      width: min(1000px, 92%);
+      margin: 50px auto;
+    }
+
+    .places h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 30px;
+    }
+
+    .place-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px #0002;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 25px #0003;
+    }
+
+    .card img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+    }
+
+    .card-body {
+      padding: 22px;
+    }
+
+    .card h3 {
+      font-size: 1.4rem;
+      color: #8b4513;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      margin-bottom: 18px;
+      color: #625448;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #39804d;
+      color: white;
+      padding: 10px 22px;
+      border-radius: 25px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #245b35;
+    }
+
+    .about {
+      background: #f5dfc2;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .about h2 {
+      margin-bottom: 10px;
+    }
+
+    footer {
+      background: #432b1c;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    @media (max-width: 650px) {
+      .place-grid {
+        grid-template-columns: 1fr;
+      }
+
+      header h1 {
+        font-size: 1.5rem;
+      }
+
+      .hero h2 {
+        font-size: 1.6rem;
+      }
+
+      .card img {
+        height: 230px;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <header>
+    <h1>🙏 Famous Temples of Uttar Pradesh</h1>
+    <p>Explore Ayodhya and Gorakhpur</p>
+  </header>
+
+  <section class="hero">
+    <h2>Discover the Spiritual Beauty</h2>
+    <p>Visit two famous temples of Uttar Pradesh.</p>
+  </section>
+
+  <main>
+    <section class="places">
+      <h2>🛕 Our Famous Temples</h2>
+
+```
+  <div class="place-grid">
+
+    <!-- RAM MANDIR -->
+    <article class="card">
+      <img
+        src="https://commons.wikimedia.org/wiki/Special:FilePath/Shri_Ram_Janambhoomi_Mandir,_Ayodhya.jpg?width=900"
+        alt="Shri Ram Mandir Ayodhya">
+
+      <div class="card-body">
+        <h3>Shri Ram Mandir, Ayodhya</h3>
+
+        <p>
+          Shri Ram Mandir is a magnificent temple dedicated
+          to Lord Shri Ram. It is located at Ram Janmabhoomi
+          in the holy city of Ayodhya, Uttar Pradesh.
+        </p>
+
+        <a class="btn"
+          href="https://www.google.com/maps/search/?api=1&query=Ram+Mandir+Ayodhya"
+          target="_blank" rel="noopener">
+          View Location
+        </a>
+      </div>
+    </article>
+
+    <!-- GORAKHNATH TEMPLE -->
+    <article class="card">
+      <img
+        src="https://commons.wikimedia.org/wiki/Special:FilePath/Gorakhnath_Main_Temple.jpg?width=900"
+        alt="Gorakhnath Temple Gorakhpur">
+
+      <div class="card-body">
+        <h3>Gorakhnath Temple, Gorakhpur</h3>
+
+        <p>
+          Gorakhnath Temple is a famous spiritual destination
+          in Gorakhpur. It is associated with Guru Gorakhnath
+          and attracts devotees throughout the year.
+        </p>
+
+        <a class="btn"
+          href="https://www.google.com/maps/search/?api=1&query=Gorakhnath+Temple+Gorakhpur"
+          target="_blank" rel="noopener">
+          View Location
+        </a>
+      </div>
+    </article>
+
+  </div>
+</section>
+```
+
+  </main>
+
+  <section class="about">
+    <h2>About These Temples</h2>
+    <p>
+      Ayodhya and Gorakhpur are important spiritual destinations
+      in Uttar Pradesh. These temples represent the religious
+      and cultural heritage of India.
+    </p>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Famous Temples of Uttar Pradesh</p>
+    <p>Explore | Visit | Discover</p>
+  </footer>
+
+</body>
+</html>
+

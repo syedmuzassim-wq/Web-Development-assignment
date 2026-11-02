@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Repository Assignment</title>
+</head>
+<body>
+
+    <h1>GitHub Repository with Three Meaningful Commits</h1>
+
+    <h2>Objective</h2>
+    <p>
+        To create a GitHub repository and make at least three meaningful
+        commits to track changes in a project.
+    </p>
+
+    <h2>Step 1: Create a Project Folder</h2>
+    <pre><code>mkdir my-project
+cd my-project</code></pre>
+
+    <h2>Step 2: Create an HTML File</h2>
+    <p>Create a file named <b>index.html</b> and add the following code:</p>
+
+    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;My First Project&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Welcome to My Project&lt;/h1&gt;
+    &lt;p&gt;This is my first HTML project.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+    <h2>Step 3: Initialize Git</h2>
+    <pre><code>git init
+git add index.html
+git commit -m "Add initial HTML page"</code></pre>
+
+    <h2>Step 4: Make Three Meaningful Commits</h2>
+
+    <h3>Commit 1: Add Initial HTML Page</h3>
+    <pre><code>git add index.html
+git commit -m "Add initial HTML page"</code></pre>
+
+    <h3>Commit 2: Add Project Description</h3>
+    <p>Add this paragraph inside the body of index.html:</p>
+    <pre><code>&lt;p&gt;This project demonstrates basic HTML structure.&lt;/p&gt;</code></pre>
+
+    <pre><code>git add index.html
+git commit -m "Add project description"</code></pre>
+
+    <h3>Commit 3: Add More HTML Content</h3>
+    <p>Add this heading and list inside the body of index.html:</p>
+    <pre><code>&lt;h2&gt;My Learning Goals&lt;/h2&gt;
+&lt;ul&gt;
+    &lt;li&gt;Learn HTML&lt;/li&gt;
+    &lt;li&gt;Learn CSS&lt;/li&gt;
+    &lt;li&gt;Learn JavaScript&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+
+    <pre><code>git add index.html
+git commit -m "Add learning goals section"</code></pre>
+
+    <h2>Step 5: Verify Commits</h2>
+    <pre><code>git log --oneline</code></pre>
+
+    <h2>Step 6: Push to GitHub</h2>
+    <p>Create a new repository on GitHub, then run:</p>
+
+    <pre><code>git branch -M main
+git remote add origin YOUR_GITHUB_REPOSITORY_URL
+git push -u origin main</code></pre>
+
+    <h2>Expected Result</h2>
+    <ul>
+        <li>A GitHub repository containing index.html.</li>
+        <li>At least three meaningful commits.</li>
+        <li>A project history showing the changes made.</li>
+    </ul>
+
+    <h2>Conclusion</h2>
+    <p>
+        I created an HTML project, tracked changes using Git,
+        made three meaningful commits, and pushed the repository to GitHub.
+    </p>
+
+</body>
+</html>
+```

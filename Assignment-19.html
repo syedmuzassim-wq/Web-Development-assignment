@@ -1,0 +1,250 @@
+19-meta-tags-audit.htm<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <!-- ESSENTIAL META TAGS -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>Meta Tag Audit – Template &amp; Report</title>
+
+  <meta name="description" content="Audit of all assignment HTML files with the meta tags they need.">
+  <meta name="author" content="Pawan Singh Kushwaha">
+  <meta name="keywords" content="html, meta tags, seo, audit">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#1f3a93">
+
+  <!-- Open Graph -->
+
+  <meta property="og:title" content="Meta Tag Audit">
+  <meta property="og:description" content="Which meta tags every page needs.">
+  <meta property="og:type" content="website">
+
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg'><text y='.9em' font-size='90'>🔍</text></svg>">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      min-height: 100vh;
+      padding: 40px 15px;
+      color: #333;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      padding: 35px;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+      text-align: center;
+      color: #1f3a93;
+      margin-bottom: 20px;
+      font-size: 30px;
+    }
+
+    .intro {
+      text-align: center;
+      color: #555;
+      line-height: 1.7;
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      color: #1f3a93;
+      margin-top: 30px;
+      margin-bottom: 18px;
+      border-bottom: 2px solid #dbeafe;
+      padding-bottom: 10px;
+    }
+
+    .table-wrapper {
+      width: 100%;
+      overflow-x: auto;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      min-width: 550px;
+      margin-bottom: 25px;
+    }
+
+    th,
+    td {
+      border: 1px solid #ddd;
+      padding: 14px;
+      text-align: left;
+    }
+
+    th {
+      background: #1f3a93;
+      color: white;
+      font-size: 16px;
+    }
+
+    tbody tr:nth-child(even) {
+      background: #f1f5f9;
+    }
+
+    tbody tr:hover {
+      background: #dbeafe;
+      transition: 0.3s;
+    }
+
+    .ok {
+      color: #15803d;
+      font-weight: bold;
+    }
+
+    .fix {
+      color: crimson;
+      font-weight: bold;
+    }
+
+    ul {
+      padding-left: 25px;
+      line-height: 2;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    code {
+      background: #e0e7ff;
+      color: #3730a3;
+      padding: 3px 6px;
+      border-radius: 4px;
+    }
+
+    b {
+      color: #1f3a93;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 30px;
+      padding-top: 18px;
+      border-top: 1px solid #ddd;
+      color: #666;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 20px 10px;
+      }
+
+      .container {
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 23px;
+      }
+
+      h2 {
+        font-size: 20px;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div class="container">
+
+```
+<h1>Meta-Tag Audit of Assignments 6 – 18</h1>
+
+<p class="intro">
+  Every HTML file was checked for
+  <code>charset</code>,
+  <code>viewport</code>,
+  <code>description</code> and a meaningful
+  <code>&lt;title&gt;</code>.
+</p>
+
+<div class="table-wrapper">
+
+  <table>
+    <thead>
+      <tr>
+        <th>File</th>
+        <th>Missing Before</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>06-basic-page.html</td>
+        <td>viewport, description</td>
+        <td class="ok">Fixed ✔</td>
+      </tr>
+
+      <tr>
+        <td>07-resume-text-only.html</td>
+        <td>viewport, description</td>
+        <td class="ok">Fixed ✔</td>
+      </tr>
+
+      <tr>
+        <td>08-resume-semantic.html</td>
+        <td>viewport, description</td>
+        <td class="ok">Fixed ✔</td>
+      </tr>
+
+      <tr>
+        <td>09-debug-buggy-html.html</td>
+        <td>charset (bug #2)</td>
+        <td class="ok">Fixed ✔</td>
+      </tr>
+
+      <tr>
+        <td>10 – 18</td>
+        <td>description on some pages</td>
+        <td class="ok">Fixed ✔</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<h2>Why Each Tag Matters</h2>
+
+<ul>
+  <li><b>charset</b> – prevents garbled characters such as ₹ or é.</li>
+
+  <li><b>viewport</b> – makes pages usable on phones.</li>
+
+  <li><b>description</b> – the snippet shown in Google results.</li>
+
+  <li><b>Open Graph</b> – controls the preview when the link is shared.</li>
+</ul>
+
+<footer>
+  <p>
+    <small>&copy; 2026 Pawan Singh Kushwaha | HTML &amp; CSS Assignment</small>
+  </p>
+</footer>
+```
+
+  </div>
+
+</body>
+</html>
